@@ -1,0 +1,38 @@
+/* Colors */
+
+.bg-ink {
+  background-color: #262931;
+}
+
+.bg-light {
+  background-color: #fffbf0;
+}
+
+.ink {
+  color: #262931;
+}
+
+.light {
+  color: #fffbf0;
+}
+
+/* Fonts */
+
+.f-title {
+  font-family: "Georama", sans-serif;
+}
+
+.f-default {
+  font-family: "Epilogue", sans-serif;
+  line-height: 1.25;
+}
+
+/* Shadows */
+
+.drop-shadow-m {
+  filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.2));
+}
+
+.shadow-xl {
+  box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.2);
+}

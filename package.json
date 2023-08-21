@@ -1,0 +1,15 @@
+{
+  "name": "serchinastico.com",
+  "version": "1.0.0",
+  "description": "My personal webpage",
+  "repository": "git@github.com:Serchinastico/serchinastico.com.git",
+  "author": "Sergio Gutiérrez",
+  "private": true,
+  "scripts": {
+    "start:dev": "live-server ."
+  },
+  "devDependencies": {
+    "node": "20.5.0",
+    "live-server": "1.2.1"
+  }
+}
