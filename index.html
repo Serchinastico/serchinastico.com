@@ -11,19 +11,27 @@
     />
     <meta name="author" content="Sergio Gutiérrez" />
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;500&family=Georama:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;700;900&family=Georama:wght@700&display=swap"
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="style/tachyons.css" />
-    <link rel="stylesheet" href="style/theme.css" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="/static/style/tachyons.css" />
+    <link rel="stylesheet" href="/static/style/theme.css" />
+    <link rel="stylesheet" href="/static/style/card.css" />
+    <link rel="stylesheet" href="/static/style/work.css" />
+
+    <!-- Scripts -->
+    <script src="static/js/card.js"></script>
   </head>
-  <body class="bg-light f-default pa4">
-    <header class="flex flex-row">
-      <img src="img/logo.svg" class="drop-shadow-m" />
+
+  <body class="bg-light f-default pa4 ink">
+    <header class="flex flex-row fixed">
+      <img src="/static/img/logo.svg" class="drop-shadow-m" />
       <div class="flex flex-column ml3 justify-center">
         <div class="f-title f2 mb1 ttu">Serchinastico</div>
         <nav class="flex flex-row link ink f4">
@@ -34,16 +42,20 @@
       </div>
     </header>
 
-    <section class="flex flex-row pa2 mt6">
-      <article class="w-60 flex items-center justify-center">
-        <img class="shadow-xl" src="img/front_card.png" width="600px" />
+    <section class="flex flex-row ph4 pv6 mt6">
+      <article id="card" class="shadow-xl perspective">
+        <img src="/static/img/front_card.png" />
+        <div class="bottom bg-ink"></div>
+        <div class="left bg-ink"></div>
+        <div class="right bg-ink"></div>
+        <div class="top bg-ink"></div>
       </article>
-      <article class="w-40 f4 fw1">
+      <article class="w-50 f4 fw1">
         <p>
           Hi! I’m <span class="b f3">SERGIO</span>, a software developer based
           on Madrid.
         </p>
-        <p>Let’s keep it short so here are three things about me:</p>
+        <p>Here are three things about me:</p>
         <ol>
           <li>
             <span class="b underline">I love product and design</span> - There
@@ -69,6 +81,74 @@
       </article>
     </section>
 
+    <div class="flex justify-center">
+      <img src="/static/img/separator.svg" />
+    </div>
+
+    <section id="work" class="flex flex-column items-center">
+      <h1>2023</h1>
+      <div class="flex flex-row items-center mw7">
+        <img
+          src="/static/img/harvest_logo.png"
+          width="150"
+          height="150"
+          class="drop-shadow-m"
+        />
+        <img
+          src="/static/img/work_separator.png"
+          height="170"
+          width="80"
+          class="mr4"
+        />
+        <div class="flex flex-column">
+          <div class="mb2">
+            <span class="ttu f4 fw5 ink-60">Security Engineer</span>&nbsp;
+            <span class="f5 fw3 ink-60">at</span>&nbsp;
+            <span class="f3 fw7">Harvest</span>
+          </div>
+          <div class="f5 fw4">
+            I implemented this and that, whatever that comes to mind right now,
+            it’s amazing how <b>time passed</b> while at Harvest. The most
+            interesting thing is how I don’t care at all how bla bla lorem ipsum
+            and <b>whatever</b>.
+          </div>
+        </div>
+      </div>
+
+      <h1 class="mt5">2022</h1>
+      <div class="flex flex-row-reverse items-center mw7">
+        <img
+          src="/static/img/sketch_logo.png"
+          width="150"
+          height="150"
+          class="drop-shadow-m"
+        />
+        <img
+          src="/static/img/work_separator.png"
+          height="170"
+          width="80"
+          class="mr4"
+        />
+        <div class="flex flex-column tr">
+          <div class="mb2">
+            <span class="ttu f4 fw5 ink-60">Frontend Engineer</span>&nbsp;
+            <span class="f5 fw3 ink-60">at</span>&nbsp;
+            <span class="f3 fw7">Sketch</span>
+          </div>
+          <div class="f5 fw4">
+            I implemented this and that, whatever that comes to mind right now,
+            it’s amazing how <b>time passed</b> while at Harvest. The most
+            interesting thing is how I don’t care at all how bla bla lorem ipsum
+            and <b>whatever</b>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="vh-100 flex flex-column justify-between items-center mt6">
+      <div>- Start Padding -</div>
+      <div>- End Padding -</div>
+    </section>
     <section class="vh-100 flex flex-column justify-between items-center mt6">
       <div>- Start Padding -</div>
       <div>- End Padding -</div>

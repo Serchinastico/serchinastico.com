@@ -1,19 +1,34 @@
 /* Colors */
 
+:root {
+  --ink: #262931;
+  --ink-60: #7d7f83;
+  --ink-20: #d4d4d6;
+  --light: #fffbf0;
+}
+
 .bg-ink {
-  background-color: #262931;
+  background-color: var(--ink);
 }
 
 .bg-light {
-  background-color: #fffbf0;
+  background-color: var(--light);
 }
 
 .ink {
-  color: #262931;
+  color: var(--ink);
+}
+
+.ink-60 {
+  color: var(--ink-60);
+}
+
+.ink-20 {
+  color: var(--ink-20);
 }
 
 .light {
-  color: #fffbf0;
+  color: var(--light);
 }
 
 /* Fonts */

@@ -1,0 +1,65 @@
+:root {
+  --card-thickness: 10px;
+}
+
+#card-event-receiver {
+  position: absolute;
+  left: 2rem;
+  top: 8rem;
+  width: 50vw;
+  height: 30vw;
+}
+
+.perspective {
+  position: relative;
+  width: 50vw;
+  height: 30vw;
+  transform-style: preserve-3d;
+  display: inline-block;
+}
+
+.perspective img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 50vw;
+  height: 30vw;
+  transform: translateZ(calc(var(--card-thickness)));
+}
+
+.bottom,
+.left,
+.right,
+.top {
+  position: absolute;
+  width: calc(48vw + 2px);
+  height: 30vw;
+  display: block;
+  overflow: hidden;
+}
+
+.left {
+  transform: rotateY(270deg) translateX(-1px) translateZ(-3px);
+  transform-origin: center left;
+  width: var(--card-thickness);
+}
+
+.right {
+  transform: rotateY(90deg) translateX(calc(-0.5 * var(--card-thickness)))
+    translateZ(calc(48vw - var(--card-thickness) * 0.4));
+  transform-origin: center center;
+  width: var(--card-thickness);
+}
+
+.bottom {
+  transform: rotateX(90deg) translateY(calc(var(--card-thickness) + 1px))
+    translateZ(calc(-30vw + var(--card-thickness)));
+  transform-origin: bottom center;
+  height: var(--card-thickness);
+}
+
+.top {
+  transform: rotateX(270deg) translateY(calc(-1 * var(--card-thickness)));
+  transform-origin: top center;
+  height: var(--card-thickness);
+}
