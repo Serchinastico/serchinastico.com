@@ -6,7 +6,7 @@
 
 .card-padding {
   width: 1px;
-  height: 900px;
+  height: 550px;
 }
 
 .card-scene {
@@ -14,7 +14,7 @@
   height: 30vw;
   max-width: var(--card-max-width);
   max-height: var(--card-max-height);
-  perspective: 900px;
+  perspective: 4000px;
 }
 
 .card {

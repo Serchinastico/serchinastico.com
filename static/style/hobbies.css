@@ -1,10 +1,10 @@
-.h-underline {
+.animated-underline {
   position: relative;
   display: inline-block;
   cursor: pointer;
 }
 
-.h-underline:after {
+.animated-underline:after {
   background: none repeat scroll 0 0 transparent;
   bottom: 2;
   content: "";
@@ -17,7 +17,7 @@
   width: 0;
 }
 
-.h-underline:hover:after {
+.animated-underline:hover:after {
   width: 100%;
   left: 0;
 }

@@ -2,13 +2,9 @@ const ROTATION_X_FACTOR = 0.2;
 const SWAP_ROTATION_X = 90;
 const FIXED_THRESHOLD = 900;
 
-const clamp = (min, max, a) => Math.min(max, Math.max(min, a));
-const lerp = (x, y, a) => x * (1 - a) + y * a;
-
 document.addEventListener("DOMContentLoaded", () => {
   const cardSection = document.querySelector("#card");
   const card = document.querySelector(".card");
-  const cardBoundingRect = card.getBoundingClientRect();
   let scrollRotationX = 0;
   let mouseRotationX = 0;
   let rotationY = 0;
