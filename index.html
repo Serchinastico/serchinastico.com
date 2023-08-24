@@ -44,15 +44,22 @@
         </div>
       </header>
 
-      <section class="flex flex-row ph4 pv6 mt6">
-        <article id="card" class="shadow-xl perspective">
-          <img src="/static/img/front_card.png" />
-          <div class="bottom bg-ink"></div>
-          <div class="left bg-ink"></div>
-          <div class="right bg-ink"></div>
-          <div class="top bg-ink"></div>
-        </article>
-        <article class="w-50 f4 fw1">
+      <section id="card" class="flex flex-row ph4 pv6 mt6 relative">
+        <div class="card-scene">
+          <div class="card">
+            <div class="card__face card__face--front bg-ink">
+              <img src="/static/img/front_card.png" />
+            </div>
+            <div class="card__face card__face--back bg-ink">
+              <img src="/static/img/back_card.png" />
+            </div>
+            <div class="card__face card__face--right bg-ink"></div>
+            <div class="card__face card__face--left bg-ink"></div>
+            <div class="card__face card__face--top bg-ink"></div>
+            <div class="card__face card__face--bottom bg-ink"></div>
+          </div>
+        </div>
+        <article class="w-50 f4 fw1 ml4">
           <p>
             Hi! I’m <span class="b f3">SERGIO</span>, a software developer based
             on Madrid.
@@ -86,6 +93,8 @@
           </p>
         </article>
       </section>
+
+      <div class="card-padding"></div>
 
       <div class="flex justify-center">
         <img src="/static/img/separator.svg" />

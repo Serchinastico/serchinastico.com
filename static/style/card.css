@@ -1,65 +1,76 @@
 :root {
+  --card-max-width: 640px;
+  --card-max-height: 400px;
   --card-thickness: 10px;
 }
 
-#card-event-receiver {
-  position: absolute;
-  left: 2rem;
-  top: 8rem;
-  width: 50vw;
-  height: 30vw;
+.card-padding {
+  width: 1px;
+  height: 900px;
 }
 
-.perspective {
+.card-scene {
+  width: 40vw;
+  height: 30vw;
+  max-width: var(--card-max-width);
+  max-height: var(--card-max-height);
+  perspective: 900px;
+}
+
+.card {
+  width: 40vw;
+  height: 30vw;
+  max-width: var(--card-max-width);
+  max-height: var(--card-max-height);
   position: relative;
-  width: 50vw;
-  height: 30vw;
   transform-style: preserve-3d;
-  display: inline-block;
+  transform-origin: calc(0.5 * var(--card-max-width))
+    calc(0.5 * var(--card-max-height));
+  transform: translateZ(calc(-0.5 * var(--card-thickness)));
 }
 
-.perspective img {
+.card__face {
   position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 50vw;
-  height: 30vw;
-  transform: translateZ(calc(var(--card-thickness)));
 }
 
-.bottom,
-.left,
-.right,
-.top {
-  position: absolute;
-  width: calc(48vw + 2px);
-  height: 30vw;
-  display: block;
-  overflow: hidden;
+.card__face--front,
+.card__face--back {
+  width: var(--card-max-width);
+  height: var(--card-max-height);
 }
 
-.left {
-  transform: rotateY(270deg) translateX(-1px) translateZ(-3px);
-  transform-origin: center left;
+.card__face--right,
+.card__face--left {
   width: var(--card-thickness);
+  height: var(--card-max-height);
+  left: calc(0.5 * var(--card-max-width) - 0.5 * var(--card-thickness));
 }
 
-.right {
-  transform: rotateY(90deg) translateX(calc(-0.5 * var(--card-thickness)))
-    translateZ(calc(48vw - var(--card-thickness) * 0.4));
-  transform-origin: center center;
-  width: var(--card-thickness);
-}
-
-.bottom {
-  transform: rotateX(90deg) translateY(calc(var(--card-thickness) + 1px))
-    translateZ(calc(-30vw + var(--card-thickness)));
-  transform-origin: bottom center;
+.card__face--top,
+.card__face--bottom {
+  width: var(--card-max-width);
   height: var(--card-thickness);
+  top: calc(0.5 * var(--card-max-height) - 0.5 * var(--card-thickness));
 }
 
-.top {
-  transform: rotateX(270deg) translateY(calc(-1 * var(--card-thickness)));
-  transform-origin: top center;
-  height: var(--card-thickness);
+.card__face--front {
+  transform: rotateY(0deg) translateZ(calc(0.5 * var(--card-thickness)));
+}
+.card__face--back {
+  transform: rotateY(180deg) rotateZ(180deg)
+    translateZ(calc(0.5 * var(--card-thickness)));
+}
+
+.card__face--right {
+  transform: rotateY(90deg) translateZ(calc(0.5 * var(--card-max-width)));
+}
+.card__face--left {
+  transform: rotateY(-90deg) translateZ(calc(0.5 * var(--card-max-width)));
+}
+
+.card__face--top {
+  transform: rotateX(90deg) translateZ(calc(0.5 * var(--card-max-height)));
+}
+.card__face--bottom {
+  transform: rotateX(-90deg) translateZ(calc(0.5 * var(--card-max-height)));
 }
