@@ -4,6 +4,11 @@
   --card-thickness: 10px;
 }
 
+/* 
+ * The card padding represents the real space the card section
+ * occupies while scrolling. It's here to create a fake padding
+ * so that the following elements are correctly positioned.
+ */
 .card-padding {
   width: 1px;
   height: 550px;
@@ -11,15 +16,13 @@
 
 .card-scene {
   width: 40vw;
-  height: 30vw;
+  height: 25vw;
   max-width: var(--card-max-width);
   max-height: var(--card-max-height);
   perspective: 4000px;
 }
 
 .card {
-  width: 40vw;
-  height: 30vw;
   max-width: var(--card-max-width);
   max-height: var(--card-max-height);
   position: relative;
@@ -29,48 +32,50 @@
   transform: translateZ(calc(-0.5 * var(--card-thickness)));
 }
 
-.card__face {
+.card-face {
   position: absolute;
 }
 
-.card__face--front,
-.card__face--back {
-  width: var(--card-max-width);
-  height: var(--card-max-height);
+.card-face-front,
+.card-face-back {
+  width: 100%;
 }
 
-.card__face--right,
-.card__face--left {
+.card-face-right,
+.card-face-left {
   width: var(--card-thickness);
   height: var(--card-max-height);
   left: calc(0.5 * var(--card-max-width) - 0.5 * var(--card-thickness));
 }
 
-.card__face--top,
-.card__face--bottom {
+.card-face-top,
+.card-face-bottom {
   width: var(--card-max-width);
   height: var(--card-thickness);
   top: calc(0.5 * var(--card-max-height) - 0.5 * var(--card-thickness));
 }
 
-.card__face--front {
+.card-face-front {
   transform: rotateY(0deg) translateZ(calc(0.5 * var(--card-thickness)));
 }
-.card__face--back {
+
+.card-face-back {
   transform: rotateY(180deg) rotateZ(180deg)
     translateZ(calc(0.5 * var(--card-thickness)));
 }
 
-.card__face--right {
+.card-face-right {
   transform: rotateY(90deg) translateZ(calc(0.5 * var(--card-max-width)));
 }
-.card__face--left {
+
+.card-face-left {
   transform: rotateY(-90deg) translateZ(calc(0.5 * var(--card-max-width)));
 }
 
-.card__face--top {
+.card-face-top {
   transform: rotateX(90deg) translateZ(calc(0.5 * var(--card-max-height)));
 }
-.card__face--bottom {
+
+.card-face-bottom {
   transform: rotateX(-90deg) translateZ(calc(0.5 * var(--card-max-height)));
 }
