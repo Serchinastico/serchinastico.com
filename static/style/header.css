@@ -1,0 +1,4 @@
+header {
+  top: -200px;
+  transition: top 0.3s ease 0s;
+}

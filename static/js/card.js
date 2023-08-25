@@ -28,7 +28,7 @@ const recalculateCardFacesPosition = () => {
   const cardWidth = frontFaceBoundingBox.width;
   const cardHeight = frontFaceBoundingBox.height;
 
-  // Recalculate the center of the transforms so the card rotates by its center
+  // Recalculate the center of the transforms so the card rotates from its center
   card.style.transformOrigin = `${cardWidth / 2}px ${cardHeight / 2}px`;
 
   /**

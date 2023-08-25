@@ -22,39 +22,44 @@
     <!-- Styles -->
     <link rel="stylesheet" href="/static/style/tachyons.css" />
     <link rel="stylesheet" href="/static/style/theme.css" />
+    <link rel="stylesheet" href="/static/style/header.css" />
     <link rel="stylesheet" href="/static/style/card.css" />
     <link rel="stylesheet" href="/static/style/work.css" />
     <link rel="stylesheet" href="/static/style/hobbies.css" />
 
     <!-- Scripts -->
     <script src="static/js/math.js"></script>
+    <script src="static/js/header.js"></script>
     <script src="static/js/card.js"></script>
     <script src="static/js/face.js"></script>
   </head>
 
   <body class="bg-light f-default ink">
-    <div class="pa4">
-      <header class="flex flex-row fixed z-1">
-        <img src="/static/img/logo.svg" class="drop-shadow-m" />
+    <header
+      class="flex flex-row w-100 fixed z-1 justify-between ph4 pv2 bg-ink shadow-xs"
+    >
+      <div class="flex flex-row">
+        <a href="/"
+          ><img src="/static/img/logo.svg" class="drop-shadow-m" height="48"
+        /></a>
         <div class="flex flex-column ml3 justify-center">
-          <div class="f-title f2 mb1 ttu">Serchinastico</div>
-          <nav class="flex flex-row ink f4">
-            <a href="#work" class="mr3 link ink animated-underline">WORK</a>
-            <a href="#hobbies" class="mr3 link ink animated-underline"
-              >HOBBIES</a
-            >
-            <a href="#contact" class="mr3 link ink animated-underline"
-              >CONTACT</a
-            >
-          </nav>
+          <a href="/" class="f-title f2 mb1 link light ttu">Serchinastico</a>
         </div>
-      </header>
+      </div>
+      <nav class="flex flex-row items-center ink f4">
+        <a href="#work" class="mr3 link light animated-underline">WORK</a>
+        <a href="#hobbies" class="mr3 link light animated-underline">HOBBIES</a>
+        <a href="#contact" class="mr3 link light animated-underline">CONTACT</a>
+      </nav>
+    </header>
 
+    <div class="pa4">
       <section
         id="card-section"
         class="flex flex-row ph4 relative vh-100 items-center justify-between"
       >
-        <div class="card-scene">
+        <!-- Card concept from https://3dtransforms.desandro.com/box -->
+        <div class="card-scene grow">
           <div class="card">
             <div class="card-face card-face-front bg-ink">
               <img src="/static/img/front_card.png" />
@@ -154,7 +159,7 @@
           </div>
         </div>
 
-        <div class="flex flex-row-reverse items-center mw7 mt5">
+        <div class="flex flex-row items-center mw7 mt6">
           <img
             src="/static/img/sketch_logo.png"
             width="150"
@@ -162,7 +167,7 @@
             class="drop-shadow-m"
           />
 
-          <div class="flex flex-column tr mr5">
+          <div class="flex flex-column ml5">
             <div class="mb2 flex flex-column">
               <span class="ttu f5 fw5 ink-60">Frontend Engineer</span>
               <span class="f3 fw7">Sketch</span>
@@ -181,7 +186,7 @@
           </div>
         </div>
 
-        <div class="flex flex-row items-center mw7 mt5">
+        <div class="flex flex-row items-center mw7 mt6">
           <img
             src="/static/img/karumi_logo.png"
             width="150"
@@ -227,14 +232,14 @@
           </div>
         </div>
 
-        <div class="flex flex-row-reverse items-center mw7 mt5">
+        <div class="flex flex-row items-center mw7 mt6">
           <img
             src="/static/img/tuenti_logo.png"
             width="150"
             height="150"
             class="drop-shadow-m"
           />
-          <div class="flex flex-column tr mr5">
+          <div class="flex flex-column ml5">
             <div class="mb2 flex flex-column">
               <span class="ttu f5 fw5 ink-60">Software Engineer</span>
               <span class="f3 fw7">Tuenti</span>
@@ -255,7 +260,7 @@
           </div>
         </div>
 
-        <div class="flex flex-row items-center mw7 mt5">
+        <div class="flex flex-row items-center mw7 mt6">
           <img
             src="/static/img/fourdays_logo.png"
             width="150"
@@ -279,14 +284,14 @@
           </div>
         </div>
 
-        <div class="flex flex-row-reverse items-center mw7 mt5">
+        <div class="flex flex-row items-center mw7 mt6">
           <img
             src="/static/img/bataba_logo.png"
             width="150"
             height="150"
             class="drop-shadow-m"
           />
-          <div class="flex flex-column tr mr5">
+          <div class="flex flex-column ml5">
             <div class="mb2 flex flex-column">
               <span class="ttu f5 fw5 ink-60">Creator</span>
               <span class="f3 fw7">Bataba</span>
