@@ -1,0 +1,25 @@
+#hobbies p {
+  margin: 0;
+}
+
+.hobby {
+  clip-path: polygon(
+    0 50%,
+    29px 0,
+    calc(100% - 29px) 0,
+    100% 50%,
+    calc(100% - 29px) 100%,
+    29px 100%
+  );
+
+  background: linear-gradient(to right, var(--ink) 50%, var(--light) 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+
+  transition: background-position 0.2s ease-in-out, color 0.1s ease-in-out;
+}
+
+.hobby.selected {
+  background-position: left bottom;
+  color: var(--light);
+}

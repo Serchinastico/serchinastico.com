@@ -72,8 +72,8 @@
 
 /* Extra */
 
-.reverse-x {
-  transform: scaleX(-1);
+.reverse-y {
+  transform: scaleY(-1);
 }
 
 .animated-underline {
