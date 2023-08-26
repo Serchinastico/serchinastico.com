@@ -1,0 +1,32 @@
+#i-am {
+  font-size: 2.5vw;
+}
+
+#i-am .hi {
+  font-size: 5vw;
+}
+
+#i-am .sergio {
+  font-size: 6vw;
+}
+
+#software-developer {
+  font-size: 1.5vw;
+}
+
+#software-developer .sd {
+  font-size: 2.5vw;
+}
+
+.collapsable {
+  overflow: hidden;
+  max-height: 500px;
+  transition: max-height 1s ease-out, margin 0.2s ease-out;
+  margin-top: 1rem;
+}
+
+.collapsed {
+  max-height: 0;
+  margin: 0;
+  transition: max-height 0.2s ease-out;
+}

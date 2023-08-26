@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="/static/style/theme.css" />
     <link rel="stylesheet" href="/static/style/header.css" />
     <link rel="stylesheet" href="/static/style/card.css" />
+    <link rel="stylesheet" href="/static/style/introduction.css" />
     <link rel="stylesheet" href="/static/style/work.css" />
     <link rel="stylesheet" href="/static/style/hobbies.css" />
 
@@ -31,6 +32,7 @@
     <script src="static/js/math.js"></script>
     <script src="static/js/header.js"></script>
     <script src="static/js/card.js"></script>
+    <script src="static/js/introduction.js"></script>
     <script src="static/js/face.js"></script>
     <script src="static/js/hobbies.js"></script>
   </head>
@@ -74,37 +76,41 @@
             <div class="card-face card-face-bottom bg-ink"></div>
           </div>
         </div>
-        <article class="w-50 f4 fw1 ml4">
-          <p>
-            Hi! I'm <span class="b f3">SERGIO</span>, a software developer based
-            on Madrid.
-          </p>
-          <p>Here are three things about me:</p>
-          <ol>
-            <li>
-              <span class="b underline">I love product and design</span> - There
-              is nothing that motivates me more than solving real-world
-              problems, and do it elegantly.
-            </li>
-            <li>
-              <span class="b underline">I build things</span> - I spend a bunch
-              of time developing my skills in a myriad of fields. I build
-              products but I also make furniture and paintings with robots. I
-              learn something new from all my inventions.
-            </li>
-            <li>
-              <span class="b underline"
-                >I work with a bunch of good people</span
+        <article class="flex flex-column justify-start w-50 f4 fw1 ml4">
+          <div class="flex flex-column w-100">
+            <p id="i-am" class="ma0">
+              <span class="hi fw7 i">Hi!&nbsp;</span>I am<span
+                class="sergio fw9 i"
+                >&nbsp;SERGIO,</span
               >
-              - During my career, I had to effectively communicate with people
-              from all departments. I'm a firm believer in the idea that great
-              products are created by great teams.
-            </li>
-          </ol>
-          <p>
-            <span class="b"
-              >I'm currently looking for a freelance position.</span
-            >
+            </p>
+            <p id="software-developer" class="ma0">
+              <span class="sd fw7 ttu i">software developer</span>
+              &nbsp;based on <span class="i">Madrid</span>.
+            </p>
+          </div>
+          <p class="collapsable collapsed">
+            <span class="ttu fw7 f5 underline">I love product and design</span
+            ><br />
+            There is nothing that motivates me more than solving real-world
+            problems, and do it elegantly.
+          </p>
+          <p class="collapsable collapsed">
+            <span class="ttu fw7 f5 underline">I build things</span><br />
+            I spend a bunch of time developing my skills in a myriad of fields.
+            I build products but I also make furniture and paintings with
+            robots. I learn something new from all my inventions.
+          </p>
+          <p class="collapsable collapsed">
+            <span class="ttu fw7 f5 underline"
+              >I work with a bunch of good people</span
+            ><br />
+            During my career, I had to effectively communicate with people from
+            all departments. I'm a firm believer in the idea that great products
+            are created by great teams.
+          </p>
+          <p class="collapsable collapsed tc fw9 ttu i f3">
+            I'm currently looking for a freelance or part&#8209;time position.
           </p>
         </article>
       </section>

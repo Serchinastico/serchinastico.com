@@ -3,11 +3,6 @@
  * Higher is faster.
  */
 const ROTATION_X_FACTOR = 0.2;
-/**
- * Amount of scroll until the card stops appearing as a fixed element
- * to scroll with the page.
- */
-const SCROLL_UNTIL_CARD_STOPS_MOVING_IN_PX = 900;
 
 const CARD_THICKNESS_IN_PX = parseInt(
   getComputedStyle(document.documentElement).getPropertyValue(
@@ -15,6 +10,41 @@ const CARD_THICKNESS_IN_PX = parseInt(
   ),
   10
 );
+
+/**
+ * This operation is somewhat complex. There are 3 components involved:
+ *   1. The introduction section
+ *   2. The card-padding element that simply adds empty space until we
+ *      finish the initial scrolling card effect
+ *   3. The screen height
+ *
+ * We want the card to continue its regular scrolling once the padding finishes.
+ * However, if the screen is really tall, we can let the next element continue
+ * for a bit until we let the card scroll. On the other hand, if the screen is
+ * short, there is a limited distance between the introduction and the end of the screen
+ * so we have almost no margin. This function just calculates the right amount
+ * of margin we can allow for the effect to feel natural.
+ */
+const calculateScrollingUntilCardMovesUpwards = () => {
+  const cardPadding = document.querySelector(".card-padding");
+  const cardPaddingBoundingBox = cardPadding.getBoundingClientRect();
+  /**
+   * We can't take the initial component height as its elements appear and disappear.
+   * This should be updated if I ever change its height.
+   */
+  const introductionMaxHeightInPx = 568;
+  /**
+   * The extra padding is a value between 0 and 200 that grows when we have
+   * taller screens.
+   */
+  const extraPadding = clamp(
+    0,
+    200,
+    window.innerHeight - introductionMaxHeightInPx
+  );
+
+  return cardPaddingBoundingBox.top + extraPadding;
+};
 
 const recalculateCardFacesPosition = () => {
   const card = document.querySelector(".card");
@@ -69,6 +99,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const cardSection = document.querySelector("#card-section");
   const card = document.querySelector(".card");
 
+  const paddingUntilCardStopsMovingInPx =
+    calculateScrollingUntilCardMovesUpwards();
+
   recalculateCardFacesPosition();
 
   let scrollRotationX = 0;
@@ -78,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("scroll", () => {
     scrollRotationX = clamp(0, 180, ROTATION_X_FACTOR * window.scrollY);
 
-    if (window.scrollY <= SCROLL_UNTIL_CARD_STOPS_MOVING_IN_PX) {
+    if (window.scrollY <= paddingUntilCardStopsMovingInPx) {
       cardSection.style.top = `${window.scrollY}px`;
     }
 
