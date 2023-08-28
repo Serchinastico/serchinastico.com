@@ -30,20 +30,22 @@ const calculateScrollingUntilCardMovesUpwards = () => {
   const cardPaddingBoundingBox = cardPadding.getBoundingClientRect();
   /**
    * We can't take the initial component height as its elements appear and disappear.
-   * This should be updated if I ever change its height.
+   * This should be updated if I ever change its height. Not the easiest way to
+   * maintain this, I'm aware.
    */
   const introductionMaxHeightInPx = 568;
   /**
    * The extra padding is a value between 0 and 200 that grows when we have
    * taller screens.
    */
+  const correctionFactor = 0.8;
   const extraPadding = clamp(
     0,
     200,
-    window.innerHeight - introductionMaxHeightInPx
+    correctionFactor * (window.innerHeight - introductionMaxHeightInPx)
   );
 
-  return cardPaddingBoundingBox.top + extraPadding;
+  return cardPaddingBoundingBox.bottom - window.innerHeight + extraPadding;
 };
 
 const recalculateCardFacesPosition = () => {
@@ -97,6 +99,7 @@ const recalculateCardFacesPosition = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const cardSection = document.querySelector("#card-section");
+  const cardPadding = document.querySelector(".card-padding");
   const card = document.querySelector(".card");
 
   const paddingUntilCardStopsMovingInPx =
@@ -104,12 +107,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   recalculateCardFacesPosition();
 
+  const cardPaddingBoundingBox = cardPadding.getBoundingClientRect();
+  const scrollRequiredToFinishCardRotationInPx =
+    cardPaddingBoundingBox.bottom - 200;
+
   let scrollRotationX = 0;
   let mouseRotationX = 0;
   let rotationY = 0;
 
   document.addEventListener("scroll", () => {
-    scrollRotationX = clamp(0, 180, ROTATION_X_FACTOR * window.scrollY);
+    scrollRotationX = clamp(
+      0,
+      180,
+      lerp(0, 180, window.scrollY / scrollRequiredToFinishCardRotationInPx)
+    );
+    // scrollRotationX = clamp(0, 180, ROTATION_X_FACTOR * window.scrollY);
 
     if (window.scrollY <= paddingUntilCardStopsMovingInPx) {
       cardSection.style.top = `${window.scrollY}px`;

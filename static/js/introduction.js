@@ -1,4 +1,4 @@
-const SCROLL_KEYPOINTS_IN_PX = [100, 400, 700, 900];
+const SCROLL_KEYPOINTS_IN_PX = [400, 800, 1200, 1600];
 
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".collapsable");
