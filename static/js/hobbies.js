@@ -30,7 +30,12 @@ const HOBBIES = {
     imagesCount: 7,
   },
   photography: {
-    description: "",
+    description: `
+    <p>
+      One day, a good friend of mine gave me his old analog camera, he was going digital.
+      Little did I know it was going to become my favorite hobby for almost 10 years.
+    </p>`,
+    imagesCount: 9,
   },
   "music-composition": {
     description: `
@@ -66,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const face = document.querySelector("#face");
   const selectedHobbyContents = document.querySelector("#selected-hobby");
   const woodworking = document.querySelector("#woodworking");
-  const threeDPrinting = document.querySelector("#three-d-printing");
   const productDesign = document.querySelector("#product-design");
   const photography = document.querySelector("#photography");
   const musicComposition = document.querySelector("#music-composition");
@@ -86,7 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const allHobbies = [
     woodworking,
-    threeDPrinting,
     productDesign,
     photography,
     musicComposition,
