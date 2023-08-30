@@ -115,9 +115,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const fileName = String(i).padStart(3, "0");
 
         const link = document.createElement("a");
-        link.href = `/static/img/hobbies/${hobby.id}/${fileName}.jpeg`;
+        link.href = `static/img/hobbies/${hobby.id}/${fileName}.jpeg`;
         const image = document.createElement("img");
-        image.src = `/static/img/hobbies/${hobby.id}/${fileName}.jpeg`;
+        image.src = `static/img/hobbies/${hobby.id}/${fileName}.jpeg`;
         link.appendChild(image);
 
         if (i % 2 === 0) {
