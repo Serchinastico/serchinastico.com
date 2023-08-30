@@ -46,9 +46,9 @@ const HOBBIES = {
     
     <p>
       I did't know how to play any instrument so I decided to use 
-      <a href="https://musescore.org/">MuseScore</a> to practice. I managed
+      <a class="link underline b" href="https://musescore.org/">MuseScore</a> to practice. I managed
       to write a bunch of songs that I uploaded to my
-      <a href="https://www.youtube.com/@Serchinastico/videos">YouTube channel</a>.
+      <a class="link underline b" href="https://www.youtube.com/@Serchinastico/videos">YouTube channel</a>.
     </p>`,
   },
   "pen-plotting": {

@@ -18,6 +18,28 @@
   font-size: 2.5vw;
 }
 
+@media screen and (min-width: 30em) and (max-width: 60em) {
+  #i-am {
+    font-size: 4vw;
+  }
+
+  #i-am .hi {
+    font-size: 10vw;
+  }
+
+  #i-am .sergio {
+    font-size: 12vw;
+  }
+
+  #software-developer {
+    font-size: 3vw;
+  }
+
+  #software-developer .sd {
+    font-size: 4vw;
+  }
+}
+
 .collapsable {
   overflow: hidden;
   margin-top: 1rem;

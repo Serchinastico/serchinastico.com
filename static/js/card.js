@@ -95,6 +95,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }deg) rotateY(${rotationY}deg)`;
   });
 
+  document.addEventListener("resize", () => {
+    recalculateCardFacesPosition();
+  });
+
   card.addEventListener("mousemove", (event) => {
     // mouseRotationX = -lerp(
     //   -30,
