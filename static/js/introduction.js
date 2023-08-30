@@ -1,7 +1,7 @@
 const SCROLL_KEYPOINTS_IN_PX = [400, 800, 1200, 1600];
 
 document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll(".collapsable");
+  const sections = document.querySelectorAll("#card-section .collapsable");
 
   document.addEventListener("scroll", () => {
     if (window.scrollY <= SCROLL_KEYPOINTS_IN_PX[0]) {

@@ -76,7 +76,10 @@
             <div class="card-face card-face-bottom bg-ink"></div>
           </div>
         </div>
-        <article class="flex flex-column justify-start w-50 f4 fw1 ml4">
+        <article
+          id="describing-me"
+          class="flex flex-column justify-start w-50 f4 fw1 ml4"
+        >
           <div class="flex flex-column w-100">
             <p id="i-am" class="ma0">
               <span class="hi fw7 i">Hi!&nbsp;</span>I am<span
@@ -322,8 +325,11 @@
         <img src="/static/img/separator.svg" />
       </div>
 
-      <section id="hobbies" class="flex flex-row items-center center mw7">
-        <section class="w-50 flex flex-column f3 fw7 items-start">
+      <section
+        id="hobbies"
+        class="flex flex-row items-center center mw8 mb4 h5"
+      >
+        <section class="w-40 flex flex-column f3 fw7 items-start">
           <div
             id="woodworking"
             class="flex flex-row items-center pointer hobby pr4 mv2"
@@ -333,18 +339,7 @@
               width="58"
               class="mr3"
             />
-            <p class="animated-underline">Woodworking</p>
-          </div>
-          <div
-            id="three-d-printing"
-            class="flex flex-row items-center pointer hobby pr4 mv2"
-          >
-            <img
-              src="/static/img/3d_printing_logo.png"
-              width="58"
-              class="mr3"
-            />
-            <p class="animated-underline">3d Printing</p>
+            <p class="hobby-item animated-underline">Woodworking</p>
           </div>
           <div
             id="product-design"
@@ -355,7 +350,7 @@
               width="58"
               class="mr3"
             />
-            <p class="animated-underline">Product Design</p>
+            <p class="hobby-item animated-underline">Product Design</p>
           </div>
           <div
             id="photography"
@@ -366,14 +361,14 @@
               width="58"
               class="mr3"
             />
-            <p class="animated-underline">Photography</p>
+            <p class="hobby-item animated-underline">Photography</p>
           </div>
           <div
             id="music-composition"
             class="flex flex-row items-center pointer hobby pr4 mv2"
           >
             <img src="/static/img/music_logo.png" width="58" class="mr3" />
-            <p class="animated-underline">Music Composition</p>
+            <p class="hobby-item animated-underline">Music Composition</p>
           </div>
           <div
             id="pen-plotting"
@@ -384,21 +379,36 @@
               width="58"
               class="mr3"
             />
-            <p class="animated-underline">Pen Plotting</p>
+            <p class="hobby-item animated-underline">Pen Plotting</p>
           </div>
         </section>
-        <section id="selected-hobby" class="w-50 dn">
-          <p class="f5">
-            I implemented this and that, whatever that comes to mind right now,
-            it’s amazing how <b>time passed</b> while at Harvest. The most
-            interesting thing is how I don’t care at all how bla bla lorem ipsum
-            and <b>whatever</b>.
-          </p>
-          <img src="/static/img/divider.png" />
-          <div class="images h5"></div>
-          <img class="reverse-y" src="/static/img/divider.png" />
+        <section
+          id="selected-hobby"
+          class="w-60 hidden h-100 flex flex-column justify-center"
+        >
+          <p id="selected-hobby-description" class="f5">-</p>
+          <div
+            id="selected-hobby-images-container"
+            class="flex flex-column overflow-scroll"
+          >
+            <img src="/static/img/divider.png" />
+            <div
+              id="selected-hobby-images"
+              class="h-100 flex flex-row overflow-scroll ph2"
+            >
+              <div
+                id="selected-hobby-images-col-1"
+                class="flex flex-column w-50 ph1"
+              ></div>
+              <div
+                id="selected-hobby-images-col-2"
+                class="flex flex-column w-50 ph1"
+              ></div>
+            </div>
+            <img class="reverse-y" src="/static/img/divider.png" />
+          </div>
         </section>
-        <section id="face" class="w-50">
+        <section id="face" class="w-60 flex flex-row justify-center">
           <svg
             height="400"
             viewBox="0 0 384 583"

@@ -1,4 +1,8 @@
-#hobbies p {
+#hobbies {
+  height: 48rem;
+}
+
+#hobbies .hobby-item {
   margin: 0;
 }
 
@@ -22,4 +26,8 @@
 .hobby.selected {
   background-position: left bottom;
   color: var(--light);
+}
+
+#hobbies .hidden {
+  display: none;
 }
