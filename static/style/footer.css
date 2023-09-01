@@ -1,9 +1,10 @@
-.need-help {
-  font-size: 2vw;
+#need-help {
+  font-size: 4vw;
+  max-width: 50%;
 }
 
-@media screen and (min-width: 30em) and (max-width: 60em) {
-  .need-help {
+@media screen and (min-width: 30em) {
+  #need-help {
     font-size: 5vw;
   }
 }

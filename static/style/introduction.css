@@ -1,42 +1,42 @@
 #i-am {
-  font-size: 2.5vw;
+  font-size: 4vw;
 }
 
 #i-am .hi {
-  font-size: 5vw;
+  font-size: 10vw;
 }
 
 #i-am .sergio {
-  font-size: 6vw;
+  font-size: 12vw;
 }
 
 #software-developer {
-  font-size: 1.5vw;
+  font-size: 3vw;
 }
 
 #software-developer .sd {
-  font-size: 2.5vw;
+  font-size: 4vw;
 }
 
-@media screen and (min-width: 30em) and (max-width: 60em) {
+@media screen and (min-width: 30em) {
   #i-am {
-    font-size: 4vw;
+    font-size: 2.5vw;
   }
 
   #i-am .hi {
-    font-size: 10vw;
+    font-size: 5vw;
   }
 
   #i-am .sergio {
-    font-size: 12vw;
+    font-size: 6vw;
   }
 
   #software-developer {
-    font-size: 3vw;
+    font-size: 1.5vw;
   }
 
   #software-developer .sd {
-    font-size: 4vw;
+    font-size: 2.5vw;
   }
 }
 

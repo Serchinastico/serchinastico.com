@@ -2,3 +2,17 @@ header {
   top: -200px;
   transition: top 0.3s ease 0s;
 }
+
+#serchinastico {
+  font-size: 5vw;
+}
+
+nav {
+  font-size: 3.5vw;
+}
+
+@media screen and (min-width: 30em) {
+  #serchinastico {
+    font-size: 2vw;
+  }
+}
