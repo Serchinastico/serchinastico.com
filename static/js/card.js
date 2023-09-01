@@ -64,30 +64,40 @@ document.addEventListener("DOMContentLoaded", () => {
   let scrollRotationX = 0;
   let mouseRotationX = 0;
   let rotationY = 0;
+  let isCardFixed = true;
+
+  const cardPaddingBoundingBox = cardPadding.getBoundingClientRect();
+  /** Some magic numbers here and there to account for small screen */
+  const extraPaddingToAccountForMargins = clamp(
+    0,
+    300,
+    0.1 * (window.innerHeight - 500)
+  );
+  const maxScrollToFixIntroduction =
+    cardPaddingBoundingBox.bottom -
+    window.innerHeight +
+    extraPaddingToAccountForMargins;
+
+  const scrollRequiredToFinishCardRotationInPx =
+    cardPaddingBoundingBox.bottom - 200;
 
   document.addEventListener("scroll", () => {
-    const cardPaddingBoundingBox = cardPadding.getBoundingClientRect();
-
-    /** Some magic numbers here and there to account for small screen */
-    const extraPaddingToAccountForMargins = clamp(
-      0,
-      300,
-      0.1 * (window.innerHeight - 500)
-    );
-    const shouldContinueScrolling =
-      cardPaddingBoundingBox.bottom >
-      window.innerHeight - extraPaddingToAccountForMargins;
-    const scrollRequiredToFinishCardRotationInPx =
-      cardPaddingBoundingBox.bottom - 200;
-
     scrollRotationX = clamp(
       0,
       180,
       lerp(0, 180, window.scrollY / scrollRequiredToFinishCardRotationInPx)
     );
 
-    if (shouldContinueScrolling) {
+    if (isCardFixed && scrollY > maxScrollToFixIntroduction) {
+      cardSection.classList.remove("fixed");
+      cardSection.classList.add("absolute");
       cardSection.style.top = `${window.scrollY}px`;
+      isCardFixed = false;
+    } else if (!isCardFixed && scrollY <= maxScrollToFixIntroduction) {
+      cardSection.classList.add("fixed");
+      cardSection.classList.remove("absolute");
+      cardSection.style.top = 0;
+      isCardFixed = true;
     }
 
     card.style.transform = `rotateX(${
