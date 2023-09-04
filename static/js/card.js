@@ -57,6 +57,7 @@ const recalculateCardFacesPosition = () => {
 document.addEventListener("DOMContentLoaded", () => {
   const cardSection = document.querySelector("#card-section");
   const cardPadding = document.querySelector(".card-padding");
+  const cardScene = document.querySelector(".card-scene");
   const card = document.querySelector(".card");
 
   recalculateCardFacesPosition();
@@ -80,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
     extraPaddingToAccountForMargins;
 
   const scrollRequiredToFinishCardRotationInPx =
-    cardPaddingBoundingBox.bottom - 200;
+    cardPaddingBoundingBox.bottom / 2;
 
   document.addEventListener("scroll", () => {
     scrollRotationX = clamp(
@@ -110,19 +111,33 @@ document.addEventListener("DOMContentLoaded", () => {
     recalculateCardFacesPosition();
   });
 
-  card.addEventListener("mousemove", (event) => {
-    // mouseRotationX = -lerp(
-    //   -30,
-    //   30,
-    //   (event.pageX - event.currentTarget.offsetLeft) / cardBoundingRect.width
-    // );
-    // rotationY = lerp(
-    //   -60,
-    //   180,
-    //   (event.pageY - event.currentTarget.offsetTop) / cardBoundingRect.height
-    // );
-    // card.style.transform = `rotateX(${
-    //   scrollRotationX + mouseRotationX
-    // }deg) rotateY(${rotationY}deg)`;
+  cardScene.addEventListener("mousemove", (event) => {
+    const cardSceneBoundingBox = cardScene.getBoundingClientRect();
+
+    const vector = {
+      x:
+        event.pageX -
+        (cardSceneBoundingBox.left + cardSceneBoundingBox.width / 2),
+      y:
+        event.pageY -
+        window.scrollY -
+        (cardSceneBoundingBox.top + cardSceneBoundingBox.height / 2),
+    };
+
+    rotationY = vector.x * 0.1;
+    mouseRotationX = vector.y * -0.1;
+
+    card.style.transform = `rotateX(${
+      scrollRotationX + mouseRotationX
+    }deg) rotateY(${rotationY}deg)`;
+  });
+
+  cardScene.addEventListener("mouseout", (event) => {
+    rotationY = 0;
+    mouseRotationX = 0;
+
+    card.style.transform = `rotateX(${
+      scrollRotationX + mouseRotationX
+    }deg) rotateY(${rotationY}deg)`;
   });
 });
