@@ -71,8 +71,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const extraPaddingToAccountForMargins = clamp(
     0,
     300,
-    0.1 * (window.innerHeight - 500)
+    1 * (window.innerHeight - 800)
   );
+
   const maxScrollToFixIntroduction =
     cardPaddingBoundingBox.bottom -
     window.innerHeight +
@@ -88,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
       lerp(0, 180, window.scrollY / scrollRequiredToFinishCardRotationInPx)
     );
 
-    if (isCardFixed && scrollY > maxScrollToFixIntroduction) {
+    if (isCardFixed && window.scrollY > maxScrollToFixIntroduction) {
       cardSection.classList.remove("fixed");
       cardSection.classList.add("absolute");
       cardSection.style.top = `${window.scrollY}px`;
