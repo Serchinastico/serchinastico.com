@@ -5,11 +5,14 @@
   "repository": "git@github.com:Serchinastico/serchinastico.com.git",
   "author": "Sergio Gutiérrez",
   "private": true,
+  "type": "module",
   "scripts": {
+    "compile": "node index.js",
     "start:dev": "live-server ."
   },
   "devDependencies": {
-    "node": "20.5.0",
-    "live-server": "1.2.1"
+    "ejs": "^3.1.9",
+    "live-server": "1.2.1",
+    "node": "20.5.0"
   }
 }

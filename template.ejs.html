@@ -20,44 +20,14 @@
     />
 
     <!-- Styles -->
-    
-    <link rel="stylesheet" href="static/style/card.css" />
-    
-    <link rel="stylesheet" href="static/style/footer.css" />
-    
-    <link rel="stylesheet" href="static/style/header.css" />
-    
-    <link rel="stylesheet" href="static/style/hobbies.css" />
-    
-    <link rel="stylesheet" href="static/style/introduction.css" />
-    
-    <link rel="stylesheet" href="static/style/tachyons.css" />
-    
-    <link rel="stylesheet" href="static/style/theme.css" />
-    
-    <link rel="stylesheet" href="static/style/work.css" />
-    
+    <% styleFiles.forEach(file => { %>
+    <link rel="stylesheet" href="<%= file %>" />
+    <% });%>
 
     <!-- Scripts -->
-    
-    <script src="static/js/card.js"></script>
-    
-    <script src="static/js/console.js"></script>
-    
-    <script src="static/js/face.js"></script>
-    
-    <script src="static/js/footer.js"></script>
-    
-    <script src="static/js/header.js"></script>
-    
-    <script src="static/js/hobbies.js"></script>
-    
-    <script src="static/js/introduction.js"></script>
-    
-    <script src="static/js/math.js"></script>
-    
-    <script src="static/js/work.js"></script>
-    
+    <% scriptFiles.forEach(file => { %>
+    <script src="<%= file %>"></script>
+    <% });%>
   </head>
 
   <body class="bg-light f-default ink">
