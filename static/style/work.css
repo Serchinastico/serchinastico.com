@@ -4,3 +4,68 @@
   color: var(--ink-20);
   margin-bottom: 3rem;
 }
+
+.logo-scene {
+  width: 100px !important;
+  height: 100px;
+  max-width: 100px;
+  max-height: 100px;
+  perspective: 4000px;
+}
+
+.logo-rotation {
+  transform: rotateZ(45deg);
+}
+
+.logo {
+  max-width: 100px;
+  max-height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: 75px 75px;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.logo-face {
+  position: absolute;
+  max-width: unset;
+}
+
+.logo-face-front {
+  width: 100px;
+  height: 100px;
+}
+
+.logo-face-right,
+.logo-face-left {
+  width: 10px;
+  height: 100px;
+  left: 50px;
+}
+
+.logo-face-top,
+.logo-face-bottom {
+  width: 100px;
+  height: 10px;
+  top: 50px;
+}
+
+.logo-face-front {
+  transform: rotateY(0deg) translateZ(5px);
+}
+
+.logo-face-right {
+  transform: rotateY(90deg) translateZ(45px);
+}
+
+.logo-face-left {
+  transform: rotateY(-90deg) translateZ(55px);
+}
+
+.logo-face-top {
+  transform: rotateX(90deg) translateZ(55px);
+}
+
+.logo-face-bottom {
+  transform: rotateX(-90deg) translateZ(45px);
+}

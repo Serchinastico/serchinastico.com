@@ -70,6 +70,10 @@
   height: 600px;
 }
 
+.flex-1 {
+  flex: 1;
+}
+
 /* Extra */
 
 .reverse-y {
