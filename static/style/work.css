@@ -6,7 +6,7 @@
 }
 
 .logo-scene {
-  width: 100px !important;
+  width: 100px;
   height: 100px;
   max-width: 100px;
   max-height: 100px;
@@ -14,6 +14,8 @@
 }
 
 .logo-rotation {
+  width: 100px;
+  height: 100px;
   transform: rotateZ(45deg);
 }
 
@@ -28,7 +30,6 @@
 
 .logo-face {
   position: absolute;
-  max-width: unset;
 }
 
 .logo-face-front {
