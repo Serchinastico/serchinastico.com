@@ -37,6 +37,7 @@
     <script src="static/js/work.js"></script>
     <script src="static/js/face.js"></script>
     <script src="static/js/hobbies.js"></script>
+    <script src="static/js/footer.js"></script>
   </head>
 
   <body class="bg-light f-default ink">
@@ -126,8 +127,9 @@
 
       <div class="card-padding"></div>
 
-      <div class="flex justify-center">
-        <img src="static/img/separator.svg" />
+      <div class="flex flex-row items-center mv5">
+        <div class="bg-ink-20 separator"></div>
+        <h1 class="big-text">WORK</h1>
       </div>
 
       <section id="work" class="flex flex-column items-center">
@@ -378,15 +380,16 @@
         </div>
       </section>
 
-      <div class="flex justify-center">
-        <img src="static/img/separator.svg" />
+      <div class="flex flex-row items-center mt6">
+        <div class="bg-ink-20 separator"></div>
+        <h1 class="big-text">HOBBIES</h1>
       </div>
 
       <section
         id="hobbies"
         class="flex flex-row-ns flex-column items-center center mw8 mb4"
       >
-        <section class="w-40-ns w-100 flex flex-column f3 fw7 items-start">
+        <section class="w-50-ns w-100 flex flex-column f3 fw7 items-start">
           <div
             id="woodworking"
             class="flex flex-row items-center pointer hobby pr4 mv2 w-auto-ns w-100"
@@ -433,7 +436,7 @@
         </section>
         <section
           id="selected-hobby"
-          class="w-60-ns w-100 hidden h-100 flex flex-column justify-center"
+          class="w-50-ns w-100 hidden h-100 flex flex-column justify-center"
         >
           <p id="selected-hobby-description" class="f5">-</p>
           <div
@@ -457,7 +460,7 @@
             <img class="reverse-y db-ns dn" src="static/img/divider.png" />
           </div>
         </section>
-        <section id="face" class="w-60 flex-ns flex-row justify-center dn">
+        <section id="face" class="w-50 flex-ns flex-row justify-center dn">
           <svg
             height="400"
             viewBox="0 0 384 583"
@@ -562,57 +565,60 @@
       </section>
     </div>
 
-    <footer id="contact" class="w-100 relative mt6-ns h-600">
-      <div
-        class="flex flex-column light absolute bottom-3-ns bottom-2 left-0 right-0 items-center justify-end z-1"
-      >
-        <p id="need-help" class="fw3 tc">
-          Do you need help with your project?<br />
-          <span class="f2 fw7">Let's talk!</span>
-        </p>
+    <footer id="contact" class="w-100 relative mt2-ns h-600">
+      <div id="footer-content" class="w-100 relative mt2-ns h-600">
+        <div
+          class="flex flex-column light absolute bottom-3-ns bottom-2 left-0 right-0 items-center justify-end z-1"
+        >
+          <p id="need-help" class="fw3 tc">
+            Do you need help with your project?<br />
+            <span id="lets-talk" class="f2 fw7">Let's talk!</span>
+          </p>
 
-        <div class="flex flex-column justify-start f4 fw3">
-          <a
-            href="mailto:hey@serchinastico.com"
-            class="flex flex-row items-center link light dim mb2"
-          >
-            <img
-              src="static/img/email_logo.svg"
-              width="32"
-              class="mr3 mb1"
-            />hey@serchinastico.com
-          </a>
-          <a
-            href="https://github.com/serchinastico"
-            class="flex flex-row items-center link light dim mb2"
-          >
-            <img
-              src="static/img/github_octocat_logo.svg"
-              width="32"
-              class="mr3 mb1"
-            />serchinastico.com
-          </a>
-          <a
-            href="https://www.linkedin.com/in/sergio-gutiérrez-mota-b8b56063/"
-            class="flex flex-row items-center link light dim mb2"
-          >
-            <img
-              src="static/img/linkedin_logo.svg"
-              width="32"
-              class="mr3 mb2"
-            />Sergio Gutiérrez</a
-          >
+          <div id="footer-links" class="flex flex-column justify-start f4 fw3">
+            <a
+              href="mailto:hey@serchinastico.com"
+              class="flex flex-row items-center link light dim mb2"
+            >
+              <img
+                src="static/img/email_logo.svg"
+                width="32"
+                class="mr3 mb1"
+              />hey@serchinastico.com
+            </a>
+            <a
+              href="https://github.com/serchinastico"
+              class="flex flex-row items-center link light dim mb2"
+            >
+              <img
+                src="static/img/github_octocat_logo.svg"
+                width="32"
+                class="mr3 mb1"
+              />serchinastico.com
+            </a>
+            <a
+              href="https://www.linkedin.com/in/sergio-gutiérrez-mota-b8b56063/"
+              class="flex flex-row items-center link light dim mb2"
+            >
+              <img
+                src="static/img/linkedin_logo.svg"
+                width="32"
+                class="mr3 mb2"
+              />Sergio Gutiérrez</a
+            >
+          </div>
         </div>
-      </div>
-      <img
-        src="static/img/footer.svg"
-        class="absolute drop-up-shadow-m bottom-0 left-0 right-0 center db-ns dn"
-      />
+        <img
+          id="footer-triangle"
+          src="static/img/footer.svg"
+          class="absolute drop-up-shadow-m bottom-0 left-0 right-0 center db-ns dn"
+        />
 
-      <img
-        src="static/img/footer_mobile.svg"
-        class="absolute drop-up-shadow-m bottom-0 left-0 right-0 center dn-ns db"
-      />
+        <img
+          src="static/img/footer_mobile.svg"
+          class="absolute drop-up-shadow-m bottom-0 left-0 right-0 center dn-ns db"
+        />
+      </div>
     </footer>
   </body>
 </html>

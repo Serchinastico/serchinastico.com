@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
     extraPaddingToAccountForMargins;
 
   const scrollRequiredToFinishCardRotationInPx =
-    cardPaddingBoundingBox.bottom / 2;
+    cardPaddingBoundingBox.bottom * 0.8;
 
   document.addEventListener("scroll", () => {
     scrollRotationX = clamp(

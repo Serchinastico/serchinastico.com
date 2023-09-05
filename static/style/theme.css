@@ -3,12 +3,17 @@
 :root {
   --ink: #262931;
   --ink-60: #7d7f83;
+  --ink-40: #a8aaad;
   --ink-20: #d4d4d6;
   --light: #fffbf0;
 }
 
 .bg-ink {
   background-color: var(--ink);
+}
+
+.bg-ink-20 {
+  background-color: var(--ink-20);
 }
 
 .bg-light {
@@ -75,6 +80,20 @@
 }
 
 /* Extra */
+
+.big-text {
+  font-family: "Epilogue";
+  font-weight: 1000;
+  font-size: 2rem;
+  color: var(--ink-20);
+
+  margin: 0 0 0 4rem;
+}
+
+.separator {
+  width: calc(100vw - 100px);
+  height: 1px;
+}
 
 .reverse-y {
   transform: scaleY(-1);
