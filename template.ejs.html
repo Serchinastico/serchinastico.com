@@ -60,9 +60,11 @@
         </div>
       </div>
       <nav class="flex flex-row items-center ink mt1-ns">
-        <a href="#work" class="mr3 link light animated-underline">WORK</a>
-        <a href="#hobbies" class="mr3 link light animated-underline">HOBBIES</a>
-        <a href="#contact" class="mr3-ns link light animated-underline"
+        <a href="#work" class="mr3 link light animated-underline dib">WORK</a>
+        <a href="#hobbies" class="mr3 link light animated-underline dib"
+          >HOBBIES</a
+        >
+        <a href="#contact" class="mr3-ns link light animated-underline dib"
           >CONTACT</a
         >
       </nav>
@@ -172,7 +174,7 @@
             class="flex flex-row items-center pointer hobby pr4 mv2 w-auto-ns w-100"
           >
             <img src="<%= entry.logo %>" width="58" class="mr3" />
-            <p class="hobby-item animated-underline"><%= entry.name %></p>
+            <p class="hobby-item animated-underline dib"><%= entry.name %></p>
           </div>
           <% }); %>
         </section>
@@ -311,7 +313,7 @@
     <footer id="contact" class="w-100 relative mt2-ns h-600">
       <div id="footer-content" class="w-100 relative mt2-ns h-600">
         <div
-          class="flex flex-column light absolute bottom-3-ns bottom-2 left-0 right-0 items-center justify-end z-1"
+          class="flex flex-column light absolute bottom-0 left-0 right-0 items-center justify-center z-1 bg-ink h-600"
         >
           <p id="need-help" class="fw3 tc">
             Do you need help with your project?<br />
@@ -319,48 +321,16 @@
           </p>
 
           <div id="footer-links" class="flex flex-column justify-start f4 fw3">
-            <a
-              href="mailto:hey@serchinastico.com"
-              class="flex flex-row items-center link light dim mb2"
-            >
-              <img
-                src="static/img/email_logo.svg"
-                width="32"
-                class="mr3 mb1"
-              />hey@serchinastico.com
-            </a>
-            <a
-              href="https://github.com/serchinastico"
-              class="flex flex-row items-center link light dim mb2"
-            >
-              <img
-                src="static/img/github_octocat_logo.svg"
-                width="32"
-                class="mr3 mb1"
-              />serchinastico.com
-            </a>
-            <a
-              href="https://www.linkedin.com/in/sergio-gutiérrez-mota-b8b56063/"
-              class="flex flex-row items-center link light dim mb2"
-            >
-              <img
-                src="static/img/linkedin_logo.svg"
-                width="32"
-                class="mr3 mb2"
-              />Sergio Gutiérrez</a
-            >
+            <% data.contact.forEach(entry => { %>
+            <div class="flex flex-row items-center mb2">
+              <img src="<%= entry.logo %>" width="32" class="mr3 mb1" />
+              <a href="<%= entry.link %>" class="link light animated-underline">
+                <%= entry.text %>
+              </a>
+            </div>
+            <% });%>
           </div>
         </div>
-        <img
-          id="footer-triangle"
-          src="static/img/footer.svg"
-          class="absolute drop-up-shadow-m bottom-0 left-0 right-0 center db-ns dn"
-        />
-
-        <img
-          src="static/img/footer_mobile.svg"
-          class="absolute drop-up-shadow-m bottom-0 left-0 right-0 center dn-ns db"
-        />
       </div>
     </footer>
   </body>

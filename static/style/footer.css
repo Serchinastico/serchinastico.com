@@ -4,48 +4,15 @@
 }
 
 #need-help {
-  font-size: 1.5vw;
-  max-width: 50%;
+  font-size: 1.5rem;
 }
 
 #lets-talk {
-  font-size: 4vw;
-  max-width: 50%;
+  font-size: 2rem;
 }
 
-@media screen and (max-width: 40em) {
-  #need-help {
-    top: 4rem;
-    font-size: 0.6rem;
-    max-width: 20%;
-  }
-
-  #footer-links {
-    font-size: 0.75rem;
-  }
-}
-
-@media screen and (max-width: 70em) and (min-width: 40em) {
-  #need-help {
-    top: 4rem;
-    font-size: 1rem;
-    max-width: 30%;
-  }
-
-  #lets-talk {
-    font-size: 1rem;
-  }
-
-  #footer-links {
-    font-size: 1rem;
-  }
-
-  #footer-triangle {
-    max-width: 120vw;
-    width: 120vw;
-    left: -10vw;
-    right: -10vw;
-  }
+#footer-links {
+  font-size: 1rem;
 }
 
 @media screen and (min-width: 70em) {
@@ -54,25 +21,10 @@
   }
 
   #lets-talk {
-    font-size: 4rem;
-  }
-
-  #footer-links {
-    font-size: 1.5rem;
-  }
-}
-
-@media screen and (min-width: 120em) {
-  #need-help {
-    font-size: 1.5rem;
-    max-width: 25%;
-  }
-
-  #lets-talk {
-    font-size: 4rem;
-  }
-
-  #footer-links {
     font-size: 2rem;
+  }
+
+  #footer-links {
+    font-size: 1.5rem;
   }
 }

@@ -1,0 +1,10 @@
+---
+- logo: static/img/email_logo.svg
+  text: hey@serchinastico.com
+  link: mailto:hey@serchinastico.com
+- logo: static/img/github_octocat_logo.svg
+  text: serchinastico
+  link: https://github.com/serchinastico
+- logo: static/img/linkedin_logo.svg
+  text: Sergio Gutiérrez
+  link: https://www.linkedin.com/in/sergio-gutiérrez-mota-b8b56063/
