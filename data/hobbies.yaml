@@ -1,0 +1,16 @@
+---
+- name: Woodworking
+  id: woodworking
+  logo: static/img/woodworking_logo.png
+- name: Product Design
+  id: product-design
+  logo: static/img/product_design_logo.png
+- name: Photography
+  id: photography
+  logo: static/img/photography_logo.png
+- name: Music Composition
+  id: music-composition
+  logo: static/img/music_logo.png
+- name: Pen Plotting
+  id: pen-plotting
+  logo: static/img/pen_plotting_logo.png

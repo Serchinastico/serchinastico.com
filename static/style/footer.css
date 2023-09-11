@@ -13,19 +13,31 @@
   max-width: 50%;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 40em) {
   #need-help {
     top: 4rem;
-    font-size: 2vw;
+    font-size: 0.6rem;
     max-width: 20%;
   }
 
+  #footer-links {
+    font-size: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 70em) and (min-width: 40em) {
+  #need-help {
+    top: 4rem;
+    font-size: 1rem;
+    max-width: 30%;
+  }
+
   #lets-talk {
-    font-size: 2vw;
+    font-size: 1rem;
   }
 
   #footer-links {
-    font-size: 2vw;
+    font-size: 1rem;
   }
 
   #footer-triangle {

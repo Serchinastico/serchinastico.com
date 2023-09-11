@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const face = document.querySelector("#face");
   const selectedHobbyContents = document.querySelector("#selected-hobby");
   const woodworking = document.querySelector("#woodworking");
+  console.log(woodworking);
   const productDesign = document.querySelector("#product-design");
   const photography = document.querySelector("#photography");
   const musicComposition = document.querySelector("#music-composition");
