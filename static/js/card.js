@@ -68,11 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let isCardFixed = true;
 
   const cardPaddingBoundingBox = cardPadding.getBoundingClientRect();
-  /** Some magic numbers here and there to account for small screen */
+  /** Some magic numbers here and there to account for small screens */
   const extraPaddingToAccountForMargins = clamp(
     0,
     300,
-    1 * (window.innerHeight - 800)
+    1 * (window.innerHeight - 1000)
   );
 
   const maxScrollToFixIntroduction =
