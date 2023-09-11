@@ -7,12 +7,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "compile": "node index.js",
-    "start:dev": "live-server ."
+    "build": "node index.js",
+    "start:dev": "nodemon index.js & live-server ."
   },
   "devDependencies": {
     "ejs": "^3.1.9",
     "live-server": "1.2.1",
-    "node": "20.5.0"
+    "node": "20.5.0",
+    "nodemon": "^3.0.1",
+    "yaml": "^2.3.2"
   }
 }

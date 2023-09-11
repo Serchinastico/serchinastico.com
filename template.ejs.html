@@ -86,29 +86,17 @@
             </p>
             <p id="software-developer" class="ma0">
               <span class="sd fw7 ttu i">software developer</span>
-              &nbsp;based on <span class="i">Madrid</span>.
+              &nbsp;working remotely from <span class="i">Madrid</span>.
             </p>
           </div>
+
+          <% data.introduction.forEach(entry => { %>
           <p class="collapsable collapsed">
-            <span class="ttu fw7 f5 underline">I love product and design</span
-            ><br />
-            There is nothing that motivates me more than solving real-world
-            problems, and do it elegantly.
+            <span class="ttu fw7 f5 underline"><%= entry.title %></span><br />
+            <%= entry.content %>
           </p>
-          <p class="collapsable collapsed">
-            <span class="ttu fw7 f5 underline">I build things</span><br />
-            I spend a bunch of time developing my skills in a myriad of fields.
-            I build products but I also make furniture and paintings with
-            robots. I learn something new from all my inventions.
-          </p>
-          <p class="collapsable collapsed">
-            <span class="ttu fw7 f5 underline"
-              >I work with a bunch of good people</span
-            ><br />
-            During my career, I had to effectively communicate with people from
-            all departments. I'm a firm believer in the idea that great products
-            are created by great teams.
-          </p>
+          <% });%>
+
           <p class="collapsable collapsed tc fw9 ttu i f3">
             I'm currently looking for a freelance or part&#8209;time position.
           </p>
@@ -123,64 +111,13 @@
       </div>
 
       <section id="work" class="flex flex-column items-center">
-        <div class="flex flex-row-ns flex-column items-center mw7 mt4">
-          <div class="logo-scene drop-shadow-m flex-1 mb0-ns mb4">
-            <div class="logo-rotation">
-              <div class="logo">
-                <img
-                  src="static/img/harvest_logo.png"
-                  class="logo-face logo-face-front"
-                />
-                <div class="logo-face logo-face-right bg-ink"></div>
-                <div class="logo-face logo-face-left bg-ink"></div>
-                <div class="logo-face logo-face-top bg-ink"></div>
-                <div class="logo-face logo-face-bottom bg-ink"></div>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-column ml5-ns ml0 mt0-ns mt4 flex-1">
-            <div class="mb2 flex flex-column">
-              <span class="ttu f5 fw5 ink-60">Security Engineer</span>
-              <span class="f3 fw7 ttu">Harvest</span>
-              <span class="f5 fw5 ink-60">'21 - '23</span>
-            </div>
-            <div class="f5 fw4">
-              <p class="mt0">
-                At Harvest, I was part of the Data and Security Engineering
-                team. Among other projects, I worked on the following:
-              </p>
-
-              <ul>
-                <li>
-                  Implementing <b>counter-measures</b> to protect the company
-                  from external attacks.
-                </li>
-                <li>Modernizing our <b>secrets management</b> pipeline.</li>
-                <li>
-                  Building <b>internal tools</b> to monitor unexpected uses of
-                  the app.
-                </li>
-                <li>
-                  Fixing <b>security issues</b> in all platforms (backend,
-                  mobile and web).
-                </li>
-                <li>Securing our emails using <b>DMARC</b>.</li>
-              </ul>
-
-              <p>
-                I collaborated with the SRE team and, in the process, learned
-                how to build resilient real-world infrastructure.
-              </p>
-            </div>
-          </div>
-        </div>
-
+        <% data.work.forEach(entry => { %>
         <div class="flex flex-row-ns flex-column items-center mw7 mt6-ns mt5">
           <div class="logo-scene drop-shadow-m flex-1 mb0-ns mb4">
             <div class="logo-rotation">
               <div class="logo">
                 <img
-                  src="static/img/sketch_logo.png"
+                  src="<%= entry.logo %>"
                   class="logo-face logo-face-front"
                 />
                 <div class="logo-face logo-face-right bg-ink"></div>
@@ -190,184 +127,18 @@
               </div>
             </div>
           </div>
-
           <div class="flex flex-column ml5-ns ml0 mt0-ns mt4 flex-1">
             <div class="mb2 flex flex-column">
-              <span class="ttu f5 fw5 ink-60">Frontend Engineer</span>
-              <span class="f3 fw7 ttu">Sketch</span>
-              <span class="f5 fw5 ink-60">'20 - '21</span>
+              <span class="ttu f5 fw5 ink-60"><%= entry.position %></span>
+              <span class="f3 fw7 ttu"><%= entry.company_name %></span>
+              <span class="f5 fw5 ink-60"
+                ><%= entry.since %> - <%= entry.until %></span
+              >
             </div>
-            <div class="f5 fw4">
-              <p class="mt0">
-                While in Sketch, I had the opportunity to learn modern web
-                development in <b>Typescript</b> and <b>React</b>. I implemented
-                multi-account, SSO sign in, worked on the design system and
-                helped revamping the render framework. However, my main take
-                away from my time in Sketch was learning how to work in a truly
-                <b>distributed company</b>.
-              </p>
-            </div>
+            <div class="f5 fw4"><%- entry.htmlDescription %></div>
           </div>
         </div>
-
-        <div class="flex flex-row-ns flex-column items-center mw7 mt6-ns mt5">
-          <div class="logo-scene drop-shadow-m flex-1 mb0-ns mb4">
-            <div class="logo-rotation">
-              <div class="logo">
-                <img
-                  src="static/img/karumi_logo.png"
-                  class="logo-face logo-face-front"
-                />
-                <div class="logo-face logo-face-right bg-ink"></div>
-                <div class="logo-face logo-face-left bg-ink"></div>
-                <div class="logo-face logo-face-top bg-ink"></div>
-                <div class="logo-face logo-face-bottom bg-ink"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex flex-column ml5-ns ml0 mt0-ns mt4 flex-1">
-            <div class="mb2 flex flex-column">
-              <span class="ttu f5 fw5 ink-60">Mobile Engineer</span>
-              <span class="f3 fw7 ttu">Karumi</span>
-              <span class="f5 fw5 ink-60">'15 - '20</span>
-            </div>
-            <div class="f5 fw4">
-              <p class="mt0">
-                Karumi was my first consultant role where I had the chance to
-                expand my reach. I worked directly with clients in their
-                projects, sharing my expertise with them while
-                <b>learning what building a product really meant</b> for all
-                teams involved: design, data, product, business, etc.
-              </p>
-              <p>
-                I had the opportunity to give talks and courses on advanced
-                topics like <b>screenshot testing</b> or
-                <b>how to build public APIs</b>. Finally, I contributed to many
-                open-source projects like
-                <a class="b link ink" href="https://github.com/Karumi/Dexter"
-                  >Dexter</a
-                >,
-                <a
-                  class="b link ink"
-                  href="https://github.com/Karumi/learnyougit"
-                  >learnyougit</a
-                >
-                and
-                <a
-                  class="b link ink"
-                  href="https://github.com/serchinastico/kin"
-                  >Kin</a
-                >.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="flex flex-row-ns flex-column items-center mw7 mt6-ns mt5">
-          <div class="logo-scene drop-shadow-m flex-1 mb0-ns mb4">
-            <div class="logo-rotation">
-              <div class="logo">
-                <img
-                  src="static/img/tuenti_logo.png"
-                  class="logo-face logo-face-front"
-                />
-                <div class="logo-face logo-face-right bg-ink"></div>
-                <div class="logo-face logo-face-left bg-ink"></div>
-                <div class="logo-face logo-face-top bg-ink"></div>
-                <div class="logo-face logo-face-bottom bg-ink"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex flex-column ml5-ns ml0 mt0-ns mt4 flex-1">
-            <div class="mb2 flex flex-column">
-              <span class="ttu f5 fw5 ink-60">Software Engineer</span>
-              <span class="f3 fw7 ttu">Tuenti</span>
-              <span class="f5 fw5 ink-60">'13 - '15</span>
-            </div>
-            <div class="f5 fw4">
-              <p class="mt0">
-                When I joined Tuenti, I worked primarily on the
-                <b>PHP backend</b>, developing tools and features for the
-                support team. I changed teams to work on the chat and I
-                specialized on the <b>VoIP stack with WebRTC</b>. I integrated
-                full VoIP capabilities in the chat for the web. I ended up
-                helping implement the <b>Android</b> and <b>iOS</b> versions as
-                well and took the opportunity to learn mobile development in the
-                process.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="flex flex-row-ns flex-column items-center mw7 mt6-ns mt5">
-          <div class="logo-scene drop-shadow-m flex-1 mb0-ns mb4">
-            <div class="logo-rotation">
-              <div class="logo">
-                <img
-                  src="static/img/fourdays_logo.png"
-                  class="logo-face logo-face-front"
-                />
-                <div class="logo-face logo-face-right bg-ink"></div>
-                <div class="logo-face logo-face-left bg-ink"></div>
-                <div class="logo-face logo-face-top bg-ink"></div>
-                <div class="logo-face logo-face-bottom bg-ink"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex flex-column ml5-ns ml0 mt0-ns mt4 flex-1">
-            <div class="mb2 flex flex-column">
-              <span class="ttu f5 fw5 ink-60">Creator</span>
-              <span class="f3 fw7 ttu">Four Days</span>
-              <span class="f5 fw5 ink-60">'19 - Now</span>
-            </div>
-            <div class="f5 fw4">
-              <p class="mt0">
-                Four Days is an app written in <b>React Native</b> -
-                <b>Typescript</b> and published for <b>iOS</b> and
-                <b>Android</b>. It helps people following a rotation diet to
-                keep track of what they eat and avoid repetitions.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="flex flex-row-ns flex-column items-center mw7 mt6-ns mt5">
-          <div class="logo-scene drop-shadow-m flex-1 mb0-ns mb4">
-            <div class="logo-rotation">
-              <div class="logo">
-                <img
-                  src="static/img/bataba_logo.png"
-                  class="logo-face logo-face-front"
-                />
-                <div class="logo-face logo-face-right bg-ink"></div>
-                <div class="logo-face logo-face-left bg-ink"></div>
-                <div class="logo-face logo-face-top bg-ink"></div>
-                <div class="logo-face logo-face-bottom bg-ink"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex flex-column ml5-ns ml0 mt0-ns mt4 flex-1">
-            <div class="mb2 flex flex-column">
-              <span class="ttu f5 fw5 ink-60">Creator</span>
-              <span class="f3 fw7 ttu">Bataba</span>
-              <span class="f5 fw5 ink-60">'18 - Now</span>
-            </div>
-            <div class="f5 fw4">
-              <p class="mt0">
-                The simplest Tabata app for your training. No fancy features, no
-                user profile nor stats. It just counts time.
-              </p>
-              <p>
-                I used Bataba to learn the basics of <b>React Native</b> and
-                <b>Typescript</b> before tackling more complex projects.
-              </p>
-            </div>
-          </div>
-        </div>
+        <% });%>
       </section>
 
       <div class="flex flex-row items-center mt6">

@@ -1,0 +1,122 @@
+---
+- logo: static/img/harvest_logo.png
+  position: Security Engineer
+  company_name: Harvest
+  since: "'21"
+  until: "'23"
+  htmlDescription: >
+    <p class="mt0">
+      At Harvest, I was part of the Data and Security Engineering
+      team. Among other projects, I worked on the following:
+    </p>
+
+    <ul>
+      <li>
+        Implementing <b>counter-measures</b> to protect the company
+        from external attacks.
+      </li>
+      <li>Modernizing our <b>secrets management</b> pipeline.</li>
+      <li>
+        Building <b>internal tools</b> to monitor unexpected uses of
+        the app.
+      </li>
+      <li>
+        Fixing <b>security issues</b> in all platforms (backend,
+        mobile and web).
+      </li>
+      <li>Securing our emails using <b>DMARC</b>.</li>
+    </ul>
+
+    <p>
+      I collaborated with the SRE team and, in the process, learned
+      how to build resilient real-world infrastructure.
+    </p>
+- logo: static/img/sketch_logo.png
+  position: Frontend Engineer
+  company_name: Sketch
+  since: "'20"
+  until: "'21"
+  htmlDescription: >
+    <p class="mt0">
+      While in Sketch, I had the opportunity to learn modern web
+      development in <b>Typescript</b> and <b>React</b>. I implemented
+      multi-account, SSO sign in, worked on the design system and
+      helped revamping the render framework. However, my main take
+      away from my time in Sketch was learning how to work in a truly
+      <b>distributed company</b>.
+    </p>
+- logo: static/img/karumi_logo.png
+  position: Mobile Engineer
+  company_name: Karumi
+  since: "'15"
+  until: "'20"
+  htmlDescription: >
+    <p class="mt0">
+      Karumi was my first consultant role where I had the chance to
+      expand my reach. I worked directly with clients in their
+      projects, sharing my expertise with them while
+      <b>learning what building a product really meant</b> for all
+      teams involved: design, data, product, business, etc.
+    </p>
+    <p>
+      I had the opportunity to give talks and courses on advanced
+      topics like <b>screenshot testing</b> or
+      <b>how to build public APIs</b>. Finally, I contributed to many
+      open-source projects like
+      <a class="b link ink" href="https://github.com/Karumi/Dexter"
+        >Dexter</a
+      >,
+      <a
+        class="b link ink"
+        href="https://github.com/Karumi/learnyougit"
+        >learnyougit</a
+      >
+      and
+      <a
+        class="b link ink"
+        href="https://github.com/serchinastico/kin"
+        >Kin</a
+      >.
+    </p>
+- logo: static/img/tuenti_logo.png
+  position: Software Engineer
+  company_name: Tuenti
+  since: "'13"
+  until: "'15"
+  htmlDescription: >
+    <p class="mt0">
+      When I joined Tuenti, I worked primarily on the
+      <b>PHP backend</b>, developing tools and features for the
+      support team. I changed teams to work on the chat and I
+      specialized on the <b>VoIP stack with WebRTC</b>. I integrated
+      full VoIP capabilities in the chat for the web. I ended up
+      helping implement the <b>Android</b> and <b>iOS</b> versions as
+      well and took the opportunity to learn mobile development in the
+      process.
+    </p>
+- logo: static/img/fourdays_logo.png
+  position: Creator
+  company_name: Four Days
+  since: "'19"
+  until: "Now"
+  htmlDescription: >
+    <p class="mt0">
+      Four Days is an app written in <b>React Native</b> -
+      <b>Typescript</b> and published for <b>iOS</b> and
+      <b>Android</b>. It helps people following a rotation diet to
+      keep track of what they eat and avoid repetitions.
+    </p>
+- logo: static/img/bataba_logo.png
+  position: Creator
+  company_name: Bataba
+  since: "'18"
+  until: "Now"
+  htmlDescription: >
+    <p class="mt0">
+      The simplest Tabata app for your training. No fancy features, no
+      user profile nor stats. It just counts time.
+    </p>
+    <p>
+      I used Bataba to learn the basics of <b>React Native</b> and
+      <b>Typescript</b> before tackling more complex projects.
+    </p>
