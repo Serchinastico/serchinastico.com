@@ -95,21 +95,23 @@
           class="flex flex-column justify-start-ns justify-center w-50-ns w-100 f4 fw1 ml4-ns mt0-ns mt4"
         >
           <div class="flex flex-column w-100 items-start-ns items-center mb4">
-            <p id="i-am" class="ma0">
+            <p id="i-am" class="ma0 slide-container w-100">
               <span class="hi fw7 i">Hi!&nbsp;</span>I am<span
-                class="sergio fw9 i"
-                >&nbsp;SERGIO,</span
+                class="sergio fw9 i slide-up"
+                >&nbsp;SERGIO</span
               >
             </p>
             <p id="software-developer" class="ma0">
               <span class="sd fw7 ttu i">software developer</span>
-              &nbsp;working remotely from <span class="i">Madrid</span>.
+              <span id="working-remotely"
+                >&nbsp;working remotely from <i>Madrid</i></span
+              >.
             </p>
           </div>
 
           <% data.introduction.forEach(entry => { %>
-          <p class="collapsable collapsed">
-            <span class="ttu fw7 f5 underline"><%= entry.title %></span><br />
+          <p class="collapsable collapsed i-love">
+            <span class="ttu fw7 underline"><%= entry.title %></span><br />
             <%= entry.content %>
           </p>
           <% });%>
@@ -310,27 +312,24 @@
       </section>
     </div>
 
-    <footer id="contact" class="w-100 relative mt2-ns h-600">
-      <div id="footer-content" class="w-100 relative mt2-ns h-600">
-        <div
-          class="flex flex-column light absolute bottom-0 left-0 right-0 items-center justify-center z-1 bg-ink h-600"
-        >
-          <p id="need-help" class="fw3 tc">
-            Do you need help with your project?<br />
-            <span id="lets-talk" class="f2 fw7">Let's talk!</span>
-          </p>
+    <footer
+      id="contact"
+      class="w-100 flex flex-column light items-center justify-center z-1 bg-ink pa5"
+    >
+      <p id="need-help" class="fw3 tc">
+        Do you need help with your project?<br />
+        <span id="lets-talk" class="f2 fw7">Let's talk!</span>
+      </p>
 
-          <div id="footer-links" class="flex flex-column justify-start f4 fw3">
-            <% data.contact.forEach(entry => { %>
-            <div class="flex flex-row items-center mb2">
-              <img src="<%= entry.logo %>" width="32" class="mr3 mb1" />
-              <a href="<%= entry.link %>" class="link light animated-underline">
-                <%= entry.text %>
-              </a>
-            </div>
-            <% });%>
-          </div>
+      <div id="footer-links" class="flex flex-column justify-start f4 fw3">
+        <% data.contact.forEach(entry => { %>
+        <div class="flex flex-row items-center mb2">
+          <img src="<%= entry.logo %>" width="32" class="mr3 mb1" />
+          <a href="<%= entry.link %>" class="link light animated-underline">
+            <%= entry.text %>
+          </a>
         </div>
+        <% });%>
       </div>
     </footer>
   </body>

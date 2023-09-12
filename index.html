@@ -61,8 +61,6 @@
     
     <script src="static/js/face.js"></script>
     
-    <script src="static/js/footer.js"></script>
-    
     <script src="static/js/header.js"></script>
     
     <script src="static/js/hobbies.js"></script>
@@ -125,31 +123,33 @@
           class="flex flex-column justify-start-ns justify-center w-50-ns w-100 f4 fw1 ml4-ns mt0-ns mt4"
         >
           <div class="flex flex-column w-100 items-start-ns items-center mb4">
-            <p id="i-am" class="ma0">
+            <p id="i-am" class="ma0 slide-container w-100">
               <span class="hi fw7 i">Hi!&nbsp;</span>I am<span
-                class="sergio fw9 i"
-                >&nbsp;SERGIO,</span
+                class="sergio fw9 i slide-up"
+                >&nbsp;SERGIO</span
               >
             </p>
             <p id="software-developer" class="ma0">
               <span class="sd fw7 ttu i">software developer</span>
-              &nbsp;working remotely from <span class="i">Madrid</span>.
+              <span id="working-remotely"
+                >&nbsp;working remotely from <i>Madrid</i></span
+              >.
             </p>
           </div>
 
           
-          <p class="collapsable collapsed">
-            <span class="ttu fw7 f5 underline">I love product and design</span><br />
+          <p class="collapsable collapsed i-love">
+            <span class="ttu fw7 underline">I love product and design</span><br />
             There is nothing that motivates me more than solving real-world problems, and do it elegantly.
           </p>
           
-          <p class="collapsable collapsed">
-            <span class="ttu fw7 f5 underline">I build things</span><br />
+          <p class="collapsable collapsed i-love">
+            <span class="ttu fw7 underline">I build things</span><br />
             I spend a bunch of time developing my skills in a myriad of fields. I build products but I also make furniture and paintings with robots. I learn something new from all my inventions.
           </p>
           
-          <p class="collapsable collapsed">
-            <span class="ttu fw7 f5 underline">I work with a bunch of good people</span><br />
+          <p class="collapsable collapsed i-love">
+            <span class="ttu fw7 underline">I work with a bunch of good people</span><br />
             During my career, I had to effectively communicate with people from all departments. I&#39;m a firm believer in the idea that great products are created by great teams.
           </p>
           
@@ -598,41 +598,38 @@
       </section>
     </div>
 
-    <footer id="contact" class="w-100 relative mt2-ns h-600">
-      <div id="footer-content" class="w-100 relative mt2-ns h-600">
-        <div
-          class="flex flex-column light absolute bottom-0 left-0 right-0 items-center justify-center z-1 bg-ink h-600"
-        >
-          <p id="need-help" class="fw3 tc">
-            Do you need help with your project?<br />
-            <span id="lets-talk" class="f2 fw7">Let's talk!</span>
-          </p>
+    <footer
+      id="contact"
+      class="w-100 flex flex-column light items-center justify-center z-1 bg-ink pa5"
+    >
+      <p id="need-help" class="fw3 tc">
+        Do you need help with your project?<br />
+        <span id="lets-talk" class="f2 fw7">Let's talk!</span>
+      </p>
 
-          <div id="footer-links" class="flex flex-column justify-start f4 fw3">
-            
-            <div class="flex flex-row items-center mb2">
-              <img src="static/img/email_logo.svg" width="32" class="mr3 mb1" />
-              <a href="mailto:hey@serchinastico.com" class="link light animated-underline">
-                hey@serchinastico.com
-              </a>
-            </div>
-            
-            <div class="flex flex-row items-center mb2">
-              <img src="static/img/github_octocat_logo.svg" width="32" class="mr3 mb1" />
-              <a href="https://github.com/serchinastico" class="link light animated-underline">
-                serchinastico
-              </a>
-            </div>
-            
-            <div class="flex flex-row items-center mb2">
-              <img src="static/img/linkedin_logo.svg" width="32" class="mr3 mb1" />
-              <a href="https://www.linkedin.com/in/sergio-gutiérrez-mota-b8b56063/" class="link light animated-underline">
-                Sergio Gutiérrez
-              </a>
-            </div>
-            
-          </div>
+      <div id="footer-links" class="flex flex-column justify-start f4 fw3">
+        
+        <div class="flex flex-row items-center mb2">
+          <img src="static/img/email_logo.svg" width="32" class="mr3 mb1" />
+          <a href="mailto:hey@serchinastico.com" class="link light animated-underline">
+            hey@serchinastico.com
+          </a>
         </div>
+        
+        <div class="flex flex-row items-center mb2">
+          <img src="static/img/github_octocat_logo.svg" width="32" class="mr3 mb1" />
+          <a href="https://github.com/serchinastico" class="link light animated-underline">
+            serchinastico
+          </a>
+        </div>
+        
+        <div class="flex flex-row items-center mb2">
+          <img src="static/img/linkedin_logo.svg" width="32" class="mr3 mb1" />
+          <a href="https://www.linkedin.com/in/sergio-gutiérrez-mota-b8b56063/" class="link light animated-underline">
+            Sergio Gutiérrez
+          </a>
+        </div>
+        
       </div>
     </footer>
   </body>

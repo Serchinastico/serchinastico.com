@@ -11,11 +11,59 @@
 }
 
 #software-developer {
-  font-size: 3vw;
+  text-align: center;
+  font-size: 5vw;
 }
 
 #software-developer .sd {
-  font-size: 4vw;
+  font-size: 7vw;
+}
+
+#working-remotely {
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.i-love {
+  font-size: 1rem;
+}
+
+.collapsable {
+  overflow: hidden;
+  margin-top: 1rem;
+  max-height: 500px;
+  opacity: 1;
+  transition: max-height 2s ease-out, margin 0.2s ease-out, opacity 1s ease-out;
+}
+
+.collapsed {
+  margin: 0;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+.slide-container {
+  position: relative;
+  overflow: hidden;
+  height: 15vw;
+  text-align: center;
+}
+
+.slide-up {
+  position: relative;
+  animation: slide-up ease 0.5s forwards 0.5s;
+  top: 120px;
+}
+
+@keyframes slide-up {
+  0% {
+    top: 120px;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
 }
 
 @media screen and (min-width: 30em) {
@@ -32,25 +80,24 @@
   }
 
   #software-developer {
+    text-align: start;
     font-size: 1.5vw;
   }
 
   #software-developer .sd {
     font-size: 2vw;
   }
-}
 
-.collapsable {
-  overflow: hidden;
-  margin-top: 1rem;
-  max-height: 500px;
-  opacity: 1;
-  transition: max-height 2s ease-out, margin 0.2s ease-out, opacity 1s ease-out;
-}
+  #working-remotely {
+    display: unset;
+  }
 
-.collapsed {
-  margin: 0;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 0.2s ease-out;
+  .i-love {
+    font-size: 1.5vw;
+  }
+
+  .slide-container {
+    height: 6.5vw;
+    text-align: start;
+  }
 }
