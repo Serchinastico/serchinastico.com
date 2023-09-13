@@ -28,13 +28,6 @@ const updateStickyValues = (fixedIntro, sections) => {
     section.style.top = `${nextTop}px`;
     nextTop += sectionBBs[index].height + MARGIN_IN_PX;
   });
-
-  let nextMarginBottom = BASE_MARGIN_BOTTOM_IN_PX;
-  sections.toReversed().forEach((section, index) => {
-    section.style.marginBottom = `${nextMarginBottom}px`;
-    nextMarginBottom +=
-      sectionBBs[sections.length - 1 - index].height + MARGIN_IN_PX;
-  });
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -65,6 +58,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const fixedIntroTop = window.innerHeight / 2 - introHeight / 2;
 
     section.style.top = `${fixedIntroTop + introHeight}px`;
+  });
+
+  /**
+   * Set the margin-bottoms
+   */
+  const introTotalHeight =
+    fixedIntroBB.height +
+    sectionBBs.reduce((acc, bb) => acc + bb.height + MARGIN_IN_PX, 0);
+  fixedIntro.style.marginBottom = `${
+    BASE_MARGIN_BOTTOM_IN_PX + introTotalHeight - fixedIntroBB.height
+  }px`;
+  let nextMarginBottom = BASE_MARGIN_BOTTOM_IN_PX;
+  sections.toReversed().forEach((section, index) => {
+    section.style.marginBottom = `${nextMarginBottom}px`;
+    nextMarginBottom +=
+      sectionBBs[sections.length - 1 - index].height + MARGIN_IN_PX;
   });
 
   const sectionsHeight = sectionBBs.reduce(
