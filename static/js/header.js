@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector("header");
-  const cardSection = document.querySelector("#card-section");
+  const work = document.querySelector("#work");
 
-  document.addEventListener("scroll", () => {
-    if (cardSection.classList.contains("fixed")) {
-      header.style.top = "-200px";
-    } else {
+  var intersectionObserver = new IntersectionObserver((entries) => {
+    if (entries.some((entry) => entry.intersectionRatio > 0)) {
       header.style.top = "0px";
+    } else {
+      header.style.top = "-200px";
     }
   });
+  intersectionObserver.observe(work);
 });

@@ -91,10 +91,10 @@
     <div class="pa4">
       <section
         id="card-section"
-        class="flex flex-row-ns flex-column ph4-ns relative vh-100 items-center justify-between-ns justify-center fixed left-2 right-2 bottom-1"
+        class="flex flex-row-ns flex-column items-start flex-1"
       >
         <!-- Card concept from https://3dtransforms.desandro.com/box -->
-        <div class="card-scene grow db-ns dn">
+        <div class="card-scene grow db-ns dn sticky">
           <div class="card">
             <div class="card-face card-face-front bg-ink">
               <img src="static/img/front_card.png" />
@@ -108,13 +108,14 @@
             <div class="card-face card-face-bottom bg-ink"></div>
           </div>
         </div>
-        <article
-          id="describing-me"
-          class="flex flex-column justify-start-ns justify-center w-50-ns w-100 f4 fw1 ml4-ns mt0-ns mt4"
+
+        <div
+          id="intro-container"
+          class="flex flex-column items-start-ns items-center mh4-ns mh2 flex-1"
         >
-          <div class="flex flex-column w-100 items-start-ns items-center mb4">
-            <p id="i-am" class="ma0 slide-container w-100">
-              <span class="hi fw7 i">Hi!&nbsp;</span>I am<span
+          <div id="fixed-intro" class="sticky o-0">
+            <p id="introduction" class="ma0 slide-container w-100">
+              <span id="hi" class="fw7 i">Hi!&nbsp;</span>I am<span
                 class="sergio fw9 i slide-up"
                 >&nbsp;SERGIO</span
               >
@@ -123,28 +124,29 @@
               <span class="sd fw7 ttu i">software developer</span>
               <span id="working-remotely"
                 >&nbsp;working remotely from <i>Madrid</i></span
-              >.
+              >
             </p>
           </div>
 
-          <% data.introduction.forEach(entry => { %>
-          <p class="collapsable collapsed i-love">
+          <% data.introduction.forEach((entry, index) => { %>
+          <div class="padding"></div>
+          <p class="intro-sticky sticky">
             <span class="ttu fw7 underline"><%= entry.title %></span><br />
             <%= entry.content %>
           </p>
           <% });%>
 
-          <p class="collapsable collapsed tc fw9 ttu i f3">
+          <div class="padding"></div>
+          <p class="intro-sticky sticky tc fw9 ttu i f3">
             I'm currently looking for a freelance or part&#8209;time position.
           </p>
-        </article>
+          <div class="padding"></div>
+        </div>
       </section>
 
-      <div class="fixed flex justify-center bottom-0 left-0 right-0 slide-down">
-        <img width="128" src="static/img/scroll_down.svg" />
+      <div class="fixed flex justify-center bottom-1 left-0 right-0 slide-down">
+        <img width="64" src="static/img/scroll_down.svg" />
       </div>
-
-      <div class="card-padding"></div>
 
       <div class="flex flex-row items-center mv5">
         <div class="bg-ink-20 separator"></div>

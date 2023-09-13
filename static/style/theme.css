@@ -74,6 +74,10 @@
 
 /* Extra */
 
+.sticky {
+  position: sticky;
+}
+
 .big-text {
   font-family: "Epilogue";
   font-weight: 1000;

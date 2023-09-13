@@ -1,12 +1,16 @@
-#i-am {
+#fixed-intro {
+  transition: all 0.2s ease-out;
+}
+
+#introduction {
   font-size: 4vw;
 }
 
-#i-am .hi {
+#introduction#hi {
   font-size: 10vw;
 }
 
-#i-am .sergio {
+#introduction .sergio {
   font-size: 12vw;
 }
 
@@ -24,23 +28,9 @@
   margin-top: 0.5rem;
 }
 
-.i-love {
+.intro-sticky {
   font-size: 1rem;
-}
-
-.collapsable {
-  overflow: hidden;
-  margin-top: 1rem;
-  max-height: 500px;
-  opacity: 1;
-  transition: max-height 2s ease-out, margin 0.2s ease-out, opacity 1s ease-out;
-}
-
-.collapsed {
-  margin: 0;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 0.2s ease-out;
+  transition: top 0.2s ease-out;
 }
 
 .slide-container {
@@ -54,6 +44,11 @@
   position: relative;
   animation: slide-up ease 0.5s forwards 0.5s;
   top: 120px;
+}
+
+.padding {
+  width: 10px;
+  height: 90vh;
 }
 
 @keyframes slide-up {
@@ -74,34 +69,34 @@
 @keyframes fade-in {
   0% {
     opacity: 0;
-    bottom: 40px;
+    margin-bottom: 20px;
   }
   100% {
     opacity: 0.2;
-    bottom: 0px;
+    margin-bottom: 0px;
   }
 }
 
 @keyframes slide-down {
   0% {
-    bottom: 0px;
+    margin-bottom: 0px;
   }
   100% {
-    bottom: -40px;
+    margin-bottom: -20px;
     opacity: 0;
   }
 }
 
 @media screen and (min-width: 30em) {
-  #i-am {
+  #introduction {
     font-size: 2.5vw;
   }
 
-  #i-am .hi {
+  #introduction#hi {
     font-size: 5vw;
   }
 
-  #i-am .sergio {
+  #introduction .sergio {
     font-size: 6vw;
   }
 
@@ -118,7 +113,7 @@
     display: unset;
   }
 
-  .i-love {
+  .intro-sticky {
     font-size: 1.5vw;
   }
 

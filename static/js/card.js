@@ -55,8 +55,7 @@ const recalculateCardFacesPosition = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  const cardSection = document.querySelector("#card-section");
-  const cardPadding = document.querySelector(".card-padding");
+  const cardPadding = document.querySelector("#intro-container");
   const cardScene = document.querySelector(".card-scene");
   const card = document.querySelector(".card");
 
@@ -65,23 +64,14 @@ document.addEventListener("DOMContentLoaded", () => {
   let scrollRotationX = 0;
   let mouseRotationX = 0;
   let rotationY = 0;
-  let isCardFixed = true;
 
   const cardPaddingBoundingBox = cardPadding.getBoundingClientRect();
-  /** Some magic numbers here and there to account for small screens */
-  const extraPaddingToAccountForMargins = clamp(
-    0,
-    300,
-    1 * (window.innerHeight - 1000)
-  );
-
-  const maxScrollToFixIntroduction =
-    cardPaddingBoundingBox.bottom -
-    window.innerHeight +
-    extraPaddingToAccountForMargins;
+  const cardSceneBB = cardScene.getBoundingClientRect();
 
   const scrollRequiredToFinishCardRotationInPx =
     cardPaddingBoundingBox.bottom * 0.8;
+
+  cardScene.style.top = `${window.innerHeight / 2 - cardSceneBB.height / 2}px`;
 
   document.addEventListener("scroll", () => {
     scrollRotationX = clamp(
@@ -89,18 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
       180,
       lerp(0, 180, window.scrollY / scrollRequiredToFinishCardRotationInPx)
     );
-
-    if (isCardFixed && window.scrollY > maxScrollToFixIntroduction) {
-      cardSection.classList.remove("fixed");
-      cardSection.classList.add("absolute");
-      cardSection.style.top = `${window.scrollY}px`;
-      isCardFixed = false;
-    } else if (!isCardFixed && scrollY <= maxScrollToFixIntroduction) {
-      cardSection.classList.add("fixed");
-      cardSection.classList.remove("absolute");
-      cardSection.style.top = 0;
-      isCardFixed = true;
-    }
 
     card.style.transform = `rotateX(${
       scrollRotationX + mouseRotationX

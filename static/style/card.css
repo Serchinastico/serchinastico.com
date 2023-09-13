@@ -4,16 +4,6 @@
   --card-thickness: 10px;
 }
 
-/* 
- * The card padding represents the real space the card section
- * occupies while scrolling. It's here to create a fake padding
- * so that the following elements are correctly positioned.
- */
-.card-padding {
-  width: 1px;
-  height: 3200px;
-}
-
 .card-scene {
   width: 40vw;
   height: 25vw;
