@@ -94,6 +94,20 @@
       well and took the opportunity to learn mobile development in the
       process.
     </p>
+- logo: static/img/guauful_logo.png
+  position: Designer
+  company_name: Guauful
+  since: "'21"
+  until: "Now"
+  htmlDescription: >
+    <p class="mt0">
+      <a class="link underline b" href="https://guauful.com/">Guauful</a> is a pet store 
+      specialized in hand-made leashes, snacks and supplements for your furry ones.
+    </p>
+    <p>
+      I built the brand from the ground up, focusing on transmitting the core values of 
+      the company while keeping a consistent and reusable design language.
+    </p>
 - logo: static/img/fourdays_logo.png
   position: Creator
   company_name: Four Days
