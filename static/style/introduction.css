@@ -1,5 +1,5 @@
-#fixed-intro {
-  transition: all 0.2s ease-out;
+#intro-container {
+  transition: transform 0.2s ease-out;
 }
 
 #introduction {

@@ -1,94 +1,71 @@
 const MARGIN_IN_PX = 16;
 const BASE_MARGIN_BOTTOM_IN_PX = 128;
 
-/**
- * Updates the top and margin-bottom parameters of all section nodes, including the
- * fixed intro. It does so by calculating the total height of all the nodes, and
- * building the values top-to-bottom.
- */
-const updateStickyValues = (fixedIntro, sections) => {
+document.addEventListener("DOMContentLoaded", () => {
+  const fixedIntro = document.querySelector("#fixed-intro");
+  const sections = Array.from(document.querySelectorAll(".intro-sticky"));
+  const introContainer = document.querySelector("#intro-container");
+
   const fixedIntroBB = fixedIntro.getBoundingClientRect();
   const sectionBBs = sections.map((section) => section.getBoundingClientRect());
 
-  const introTotalHeight =
-    fixedIntroBB.height +
-    sections.reduce((acc, section) => {
-      const bb = section.getBoundingClientRect();
-      return acc + bb.height + MARGIN_IN_PX;
-    }, 0);
+  let currentIntroTranslation = 0;
+  const isSectionFixed = sections.map((_) => false);
 
-  const fixedIntroTop = window.innerHeight / 2 - introTotalHeight / 2;
-  fixedIntro.style.top = `${fixedIntroTop}px`;
+  /**
+   * We calculate all the margin-bottoms by traversing items bottom-to-top
+   * and adding the heights of all elements. Bottom margins are important
+   * when the scroll pass by the whole section and it starts being pulled up.
+   * They are responsible for the whole element to go up preserving the
+   * relative space between items.
+   */
+  let nextMarginBottom = BASE_MARGIN_BOTTOM_IN_PX;
+  sections.toReversed().forEach((section, index) => {
+    section.style.marginBottom = `${nextMarginBottom}px`;
+
+    const nonReversedIndex = sections.length - 1 - index;
+    nextMarginBottom += sectionBBs[nonReversedIndex].height + MARGIN_IN_PX;
+  });
+
+  const sectionsHeight = sectionBBs.reduce(
+    (acc, bb) => acc + bb.height + MARGIN_IN_PX,
+    0
+  );
+  const introFinalHeight = fixedIntroBB.height + sectionsHeight;
   fixedIntro.style.marginBottom = `${
-    BASE_MARGIN_BOTTOM_IN_PX + introTotalHeight - fixedIntroBB.height
+    BASE_MARGIN_BOTTOM_IN_PX + introFinalHeight - fixedIntroBB.height
   }px`;
+
+  /**
+   * Now that we have the intro sizes right, we send an event to the card
+   * component to leave the sticky position at the same time than the intro
+   */
+  document.dispatchEvent(
+    new CustomEvent("intro-in-position", {
+      detail: {
+        baseMargin: BASE_MARGIN_BOTTOM_IN_PX,
+        translationOffset: sectionsHeight / 2,
+        introFinalHeight,
+      },
+    })
+  );
+
+  /**
+   * We calculate the top property of all sections so that they stick
+   * at the right scroll value. We are calculating their top value as if
+   * they were all already visible on screen so building top-to-bottom
+   * calculating heights and margins between elements
+   */
+  const fixedIntroTop = window.innerHeight / 2 - fixedIntroBB.height / 2;
+  fixedIntro.style.top = `${fixedIntroTop}px`;
+  fixedIntro.style.opacity = "1";
 
   let nextTop = fixedIntroTop + fixedIntroBB.height + MARGIN_IN_PX;
   sections.forEach((section, index) => {
     section.style.top = `${nextTop}px`;
+
     nextTop += sectionBBs[index].height + MARGIN_IN_PX;
   });
-};
-
-document.addEventListener("DOMContentLoaded", () => {
-  const fixedIntro = document.querySelector("#fixed-intro");
-  const sections = Array.from(document.querySelectorAll(".intro-sticky"));
-  const cardScene = document.querySelector(".card-scene");
-  const isSectionFixed = sections.map((_) => false);
-
-  const fixedIntroBB = fixedIntro.getBoundingClientRect();
-  const sectionBBs = sections.map((section) => section.getBoundingClientRect());
-
-  /**
-   * Set the initial tops. I calculate this by imagining the new section joins
-   * (gets sticky) the introduction node and measuring where it will end when
-   * that happens
-   */
-  sections.forEach((section, index) => {
-    const previousSectionBBs = sectionBBs.slice(0, index);
-    const previousSectionsHeight = previousSectionBBs.reduce(
-      (acc, section) => acc + section.height + MARGIN_IN_PX,
-      0
-    );
-
-    // Height of the introduction node before this section joins
-    const introHeight = fixedIntroBB.height + previousSectionsHeight;
-
-    // Top position of the introduction node once this section joins
-    const fixedIntroTop = window.innerHeight / 2 - introHeight / 2;
-
-    section.style.top = `${fixedIntroTop + introHeight}px`;
-  });
-
-  /**
-   * Set the margin-bottoms
-   */
-  const introTotalHeight =
-    fixedIntroBB.height +
-    sectionBBs.reduce((acc, bb) => acc + bb.height + MARGIN_IN_PX, 0);
-  fixedIntro.style.marginBottom = `${
-    BASE_MARGIN_BOTTOM_IN_PX + introTotalHeight - fixedIntroBB.height
-  }px`;
-  let nextMarginBottom = BASE_MARGIN_BOTTOM_IN_PX;
-  sections.toReversed().forEach((section, index) => {
-    section.style.marginBottom = `${nextMarginBottom}px`;
-    nextMarginBottom +=
-      sectionBBs[sections.length - 1 - index].height + MARGIN_IN_PX;
-  });
-
-  const sectionsHeight = sectionBBs.reduce(
-    (acc, section) => acc + section.height + MARGIN_IN_PX,
-    0
-  );
-  const cardSceneBB = cardScene.getBoundingClientRect();
-  cardScene.style.marginBottom = `${
-    BASE_MARGIN_BOTTOM_IN_PX +
-    (fixedIntroBB.height + sectionsHeight - cardSceneBB.height) / 2
-  }px`;
-
-  const fixedIntroTop = window.innerHeight / 2 - fixedIntroBB.height / 2;
-  fixedIntro.style.top = `${fixedIntroTop}px`;
-  fixedIntro.style.opacity = "1";
 
   let lastScroll = window.scrollY;
   document.addEventListener("scroll", () => {
@@ -109,15 +86,18 @@ document.addEventListener("DOMContentLoaded", () => {
               sectionsBBs[index - 1].bottom + MARGIN_IN_PX;
 
         return (
-          !isSectionFixed[index] && sectionsBBs[index].top < scrollThreshold
+          !isSectionFixed[index] && sectionsBBs[index].top <= scrollThreshold
         );
       });
 
       if (stickySectionIndex > -1) {
-        updateStickyValues(
-          fixedIntro,
-          sections.slice(0, stickySectionIndex + 1)
-        );
+        const newSectionsHeight = sectionBBs
+          .slice(0, stickySectionIndex + 1)
+          .reduce((acc, bb) => acc + bb.height + MARGIN_IN_PX, 0);
+        currentIntroTranslation = newSectionsHeight / 2;
+
+        introContainer.style.transform = `translateY(-${currentIntroTranslation}px)`;
+
         isSectionFixed[stickySectionIndex] = true;
       }
     } else {
@@ -135,7 +115,12 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (stickySectionIndex > -1) {
-        updateStickyValues(fixedIntro, sections.slice(0, stickySectionIndex));
+        const newSectionsHeight = sectionBBs
+          .slice(0, stickySectionIndex)
+          .reduce((acc, bb) => acc + bb.height + MARGIN_IN_PX, 0);
+        currentIntroTranslation = newSectionsHeight / 2;
+
+        introContainer.style.transform = `translateY(-${currentIntroTranslation}px)`;
 
         isSectionFixed[stickySectionIndex] = false;
       }
