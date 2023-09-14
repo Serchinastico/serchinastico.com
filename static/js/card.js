@@ -54,7 +54,9 @@ const recalculateCardFacesPosition = () => {
   }px)`;
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("readystatechange", () => {
+  if (document.readyState !== "complete") return;
+
   const cardPadding = document.querySelector("#intro-container");
   const cardScene = document.querySelector(".card-scene");
   const card = document.querySelector(".card");
@@ -64,6 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let scrollRotationX = 0;
   let mouseRotationX = 0;
   let rotationY = 0;
+
+  card.classList.toggle("o-0");
 
   const cardPaddingBoundingBox = cardPadding.getBoundingClientRect();
   const cardSceneBB = cardScene.getBoundingClientRect();

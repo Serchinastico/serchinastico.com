@@ -66,7 +66,7 @@ document.addEventListener("readystatechange", () => {
    */
   const fixedIntroTop = window.innerHeight / 2 - fixedIntroBB.height / 2;
   fixedIntro.style.top = `${fixedIntroTop}px`;
-  fixedIntro.style.opacity = "1";
+  introContainer.classList.toggle("o-0");
 
   let nextTop = fixedIntroTop + fixedIntroBB.height + MARGIN_IN_PX;
   sections.forEach((section, index) => {
