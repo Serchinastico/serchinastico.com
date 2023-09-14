@@ -1,5 +1,4 @@
 const MARGIN_IN_PX = 16;
-const BASE_MARGIN_BOTTOM_IN_PX = 128;
 
 /**
  * @param {DOMRect[]} bbs Array of bounding boxes of the nodes that are going to be measured
@@ -33,7 +32,7 @@ document.addEventListener("readystatechange", () => {
    * They are responsible for the whole element to go up preserving the
    * relative space between items.
    */
-  let nextMarginBottom = BASE_MARGIN_BOTTOM_IN_PX;
+  let nextMarginBottom = 0;
   sections.toReversed().forEach((section, index) => {
     section.style.marginBottom = `${nextMarginBottom}px`;
 
@@ -43,9 +42,7 @@ document.addEventListener("readystatechange", () => {
 
   const sectionsHeight = getSectionsHeight(sectionBBs);
   const introFinalHeight = fixedIntroBB.height + sectionsHeight;
-  fixedIntro.style.marginBottom = `${
-    BASE_MARGIN_BOTTOM_IN_PX + introFinalHeight - fixedIntroBB.height
-  }px`;
+  fixedIntro.style.marginBottom = `${introFinalHeight - fixedIntroBB.height}px`;
 
   /**
    * Now that we have the intro heights right, we send an event to the card
@@ -55,7 +52,6 @@ document.addEventListener("readystatechange", () => {
   document.dispatchEvent(
     new CustomEvent("intro-in-position", {
       detail: {
-        baseMargin: BASE_MARGIN_BOTTOM_IN_PX,
         translationOffset: sectionsHeight / 2,
         introFinalHeight,
       },

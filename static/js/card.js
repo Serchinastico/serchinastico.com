@@ -74,11 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
   cardScene.style.top = `${window.innerHeight / 2 - cardSceneBB.height / 2}px`;
 
   document.addEventListener("intro-in-position", (event) => {
-    const { baseMargin, translationOffset, introFinalHeight } = event.detail;
+    const { translationOffset, introFinalHeight } = event.detail;
     cardScene.style.marginBottom = `${
-      baseMargin +
-      translationOffset +
-      (introFinalHeight - cardSceneBB.height) / 2
+      translationOffset + (introFinalHeight - cardSceneBB.height) / 2
     }px`;
   });
 

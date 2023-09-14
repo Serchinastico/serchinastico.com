@@ -45,9 +45,9 @@
   top: 120px;
 }
 
-.padding {
+.intro-padding {
   width: 10px;
-  height: 55vh;
+  height: calc(50vh + 100px);
 }
 
 @keyframes slide-up {
