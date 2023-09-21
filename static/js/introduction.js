@@ -26,23 +26,30 @@ document.addEventListener("readystatechange", () => {
   let currentIntroTranslation = 0;
 
   /**
-   * We calculate all the margin-bottoms by traversing items bottom-to-top
+   * We calculate all the padding-bottoms by traversing items bottom-to-top
    * and adding the heights of all elements. Bottom margins are important
    * when the scroll pass by the whole section and it starts being pulled up.
    * They are responsible for the whole element to go up preserving the
    * relative space between items.
+   *
+   * Interesting fact here. I started using margin-bottom at first, and it all
+   * worked pretty well everywhere... except Chrome+Android, that's why I'm
+   * using padding-bottom now, just in case you feel tempted to go back for any
+   * reason.
    */
-  let nextMarginBottom = 0;
+  let nextPaddingBottom = 0;
   sections.toReversed().forEach((section, index) => {
-    section.style.marginBottom = `${nextMarginBottom}px`;
+    section.style.paddingBottom = `${nextPaddingBottom}px`;
 
     const nonReversedIndex = sections.length - 1 - index;
-    nextMarginBottom += sectionBBs[nonReversedIndex].height + MARGIN_IN_PX;
+    nextPaddingBottom += sectionBBs[nonReversedIndex].height + MARGIN_IN_PX;
   });
 
   const sectionsHeight = getSectionsHeight(sectionBBs);
   const introFinalHeight = fixedIntroBB.height + sectionsHeight;
-  fixedIntro.style.marginBottom = `${introFinalHeight - fixedIntroBB.height}px`;
+  fixedIntro.style.paddingBottom = `${
+    introFinalHeight - fixedIntroBB.height
+  }px`;
 
   /**
    * Now that we have the intro heights right, we send an event to the card
