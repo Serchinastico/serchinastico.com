@@ -67,6 +67,18 @@ document.addEventListener("readystatechange", () => {
   let mouseRotationX = 0;
   let rotationY = 0;
 
+  // card.style.transform = `rotateX(${
+  //   scrollRotationX + mouseRotationX
+  // }deg) rotateY(${rotationY}deg)`;
+
+  // setTimeout(() => {
+  //   setTimeout(() => {
+  //     card.style.transform = `rotateX(${180}deg) rotateY(0deg)`;
+  //   }, 3000);
+
+  //   card.style.transform = `rotateX(${0}deg) rotateY(0deg)`;
+  // }, 3000);
+
   card.classList.toggle("o-0");
 
   const cardPaddingBoundingBox = cardPadding.getBoundingClientRect();
@@ -85,10 +97,10 @@ document.addEventListener("readystatechange", () => {
   });
 
   document.addEventListener("scroll", () => {
-    scrollRotationX = clamp(
+    scrollRotationX = lerp(
       0,
       180,
-      lerp(0, 180, window.scrollY / scrollRequiredToFinishCardRotationInPx)
+      window.scrollY / scrollRequiredToFinishCardRotationInPx
     );
 
     card.style.transform = `rotateX(${
